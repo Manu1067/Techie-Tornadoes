@@ -158,6 +158,7 @@
                 <form
                     id="registrationForm"
                     class="registration-form"
+                    novalidate
                 >
 
 
@@ -231,7 +232,7 @@
                                     type="tel"
                                     id="phone"
                                     name="phone"
-                                    placeholder="Enter your phone number"
+                                    placeholder="10-digit mobile number"
                                     required
                                 >
 
@@ -281,7 +282,7 @@
                                 required
                             >
 
-                                <option value="">
+                                <option value="" disabled selected>
                                     Select your year
                                 </option>
 
@@ -322,7 +323,7 @@
                                 required
                             >
 
-                                <option value="">
+                                <option value="" disabled selected>
                                     Select your branch
                                 </option>
 
@@ -383,6 +384,7 @@
                                     type="button"
                                     class="password-toggle"
                                     data-target="password"
+                                    aria-label="Show password"
                                 >
                                     ◉
                                 </button>
@@ -414,6 +416,7 @@
                                     type="button"
                                     class="password-toggle"
                                     data-target="confirmPassword"
+                                    aria-label="Show password"
                                 >
                                     ◉
                                 </button>
@@ -434,10 +437,9 @@
                             <input
                                 type="checkbox"
                                 id="terms"
+                                name="terms"
                                 required
                             >
-
-                            <span class="custom-checkbox"></span>
 
                             <span class="terms-text">
                                 I agree to the
@@ -676,7 +678,7 @@
         <div class="footer-container">
 
             <p>
-                © 2026 Techie-Tornadoes. All rights reserved.
+                © <span data-current-year>2026</span> Techie-Tornadoes. All rights reserved.
             </p>
 
             <div class="footer-links">
@@ -697,9 +699,9 @@
 
             <div class="social-links">
 
-                <a href="#">◎</a>
-                <a href="#">in</a>
-                <a href="#">●</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="GitHub">●</a>
 
             </div>
 
@@ -708,6 +710,7 @@
     </footer>
 
 
+    <script src="js/main.js"></script>
     <script src="js/registration.js"></script>
 
 </body>

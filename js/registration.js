@@ -171,17 +171,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ================= ERROR MESSAGE =================
+    // NOTE: previously missing the "show" class, so the CSS rule
+    // `.form-message.show { display: block; }` never fired and the
+    // message stayed hidden regardless of what happened.
 
     function showError(message) {
         formMessage.textContent = message;
-        formMessage.classList.add("error");
+        formMessage.className = "form-message show error";
     }
 
     // ================= SUCCESS MESSAGE =================
 
     function showSuccess(message) {
         formMessage.textContent = message;
-        formMessage.classList.add("success");
+        formMessage.className = "form-message show success";
     }
 
     // ================= PASSWORD TOGGLE (CORRECTED) =================
@@ -196,13 +199,15 @@ document.addEventListener("DOMContentLoaded", function () {
             // Guard against missing input
             if (!passwordInput) return;
 
-            // Toggle input type and button text
+            // Toggle input type, button text, and accessible label
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
                 button.textContent = "🙈"; // Hide icon (password visible)
+                button.setAttribute("aria-label", "Hide password");
             } else {
                 passwordInput.type = "password";
                 button.textContent = "👁️"; // Show icon (password hidden)
+                button.setAttribute("aria-label", "Show password");
             }
         });
     });
