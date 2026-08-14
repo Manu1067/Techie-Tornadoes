@@ -1,61 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Techie-Tornadoes</title>
+    <title>Techie-Tornadoes | Tech Events</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
 </head>
 
 <body>
 
-    
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="events.html">Events</a>
-            <a href="registration.html">Register</a>
-        </nav>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+                <span class="brand-icon">〰</span>
+                <span>Techie-Tornadoes</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="events.html">Events</a>
+                <a href="registration.html">Register</a>
+            </nav>
+
+            <a href="registration.html" class="login-btn">
+                <span>♙</span>
+                Login / Register
+            </a>
+
+        </div>
+
     </header>
 
 
+    <!-- ================= HERO ================= -->
+
     <main>
 
-        <section id="hero">
-            <h1>Discover. Build. Compete.</h1>
-            <p>Discover the best technical events for students.</p>
+        <section class="hero">
 
-            <a href="events.html">Explore Events</a>
+            <div class="hero-content">
+
+                <div class="hero-text">
+
+                    <p class="eyebrow">
+                        TECH EVENTS PLATFORM
+                    </p>
+
+                    <h1>
+                        Discover.
+                        <span>Build.</span>
+                        Compete.
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover the best technical events for students.
+                        <br>
+                        Learn, innovate and compete with the best.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="events.html" class="primary-btn">
+                            Explore Events
+                            <span>→</span>
+                        </a>
+
+                        <a href="#highlights" class="secondary-btn">
+                            <span>▷</span>
+                            How It Works
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <img
+                        src="assets/images/hero/hero.jpg"
+                        alt="Students collaborating on a technology project"
+                    >
+
+                </div>
+
+            </div>
+
         </section>
 
 
-        <section id="highlights">
+        <!-- ================= EVENT HIGHLIGHTS ================= -->
 
-            <h2>Event Highlights</h2>
+        <section id="highlights" class="highlights">
+
+            <div class="section-header">
+
+                <h2>
+                    Event <span>Highlights</span>
+                </h2>
+
+                <p>
+                    Top technical events happening around you.
+                </p>
+
+            </div>
+
+
+            <div class="event-grid">
+
+
+                <!-- EVENT 1 -->
+
+                <article class="event-card">
+
+                    <div class="event-icon blue-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>
+                        CodeSprint
+                    </h3>
+
+                    <p class="event-date">
+                        ▣ &nbsp; 15 Jun 2026
+                    </p>
+
+                    <span class="category blue-category">
+                        Coding
+                    </span>
+
+                </article>
+
+
+                <!-- EVENT 2 -->
+
+                <article class="event-card">
+
+                    <div class="event-icon blue-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        RoboWars
+                    </h3>
+
+                    <p class="event-date">
+                        ▣ &nbsp; 22 Jun 2026
+                    </p>
+
+                    <span class="category blue-category">
+                        Robotics
+                    </span>
+
+                </article>
+
+
+                <!-- EVENT 3 -->
+
+                <article class="event-card">
+
+                    <div class="event-icon blue-icon">
+                        🛡
+                    </div>
+
+                    <h3>
+                        CyberShield
+                    </h3>
+
+                    <p class="event-date">
+                        ▣ &nbsp; 29 Jun 2026
+                    </p>
+
+                    <span class="category blue-category">
+                        Cyber Security
+                    </span>
+
+                </article>
+
+
+                <!-- EVENT 4 -->
+
+                <article class="event-card">
+
+                    <div class="event-icon pink-icon">
+                        💡
+                    </div>
+
+                    <h3>
+                        InnovateX
+                    </h3>
+
+                    <p class="event-date">
+                        ▣ &nbsp; 06 Jul 2026
+                    </p>
+
+                    <span class="category pink-category">
+                        Innovation
+                    </span>
+
+                </article>
+
+
+                <!-- EVENT 5 -->
+
+                <article class="event-card">
+
+                    <div class="event-icon pink-icon">
+                        🎙
+                    </div>
+
+                    <h3>
+                        TechTalks
+                    </h3>
+
+                    <p class="event-date">
+                        ▣ &nbsp; 13 Jul 2026
+                    </p>
+
+                    <span class="category pink-category">
+                        Workshop
+                    </span>
+
+                </article>
+
+
+                <!-- EVENT 6 -->
+
+                <article class="event-card">
+
+                    <div class="event-icon blue-icon">
+                        ☁
+                    </div>
+
+                    <h3>
+                        CloudCraft
+                    </h3>
+
+                    <p class="event-date">
+                        ▣ &nbsp; 20 Jul 2026
+                    </p>
+
+                    <span class="category blue-category">
+                        Cloud Computing
+                    </span>
+
+                </article>
+
+            </div>
+
+
+            <a href="events.html" class="view-events">
+                View All Events
+                <span>→</span>
+            </a>
 
         </section>
 
 
-        <section id="cta">
+        <!-- ================= CTA ================= -->
 
-            <h2>Ready for your next challenge?</h2>
+        <section class="cta">
 
-            <a href="events.html">Explore All Events</a>
+            <div class="cta-container">
+
+                <div class="cta-icon">
+                    ♧
+                </div>
+
+                <div class="cta-text">
+
+                    <h2>
+                        Ready for your next challenge?
+                    </h2>
+
+                    <p>
+                        Join exciting events, meet amazing people
+                        and build your future.
+                    </p>
+
+                </div>
+
+                <a href="registration.html" class="cta-button">
+                    Register Now
+                    <span>→</span>
+                </a>
+
+            </div>
 
         </section>
 
     </main>
 
+
+    <!-- ================= FOOTER ================= -->
+
     <footer>
-        <p>&copy; 2026 Tech Fest</p>
+
+        <div class="footer-container">
+
+            <p>
+                © 2026 Techie-Tornadoes. All rights reserved.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+
+            </div>
+
+            <div class="social-links">
+
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="GitHub">●</a>
+
+            </div>
+
+        </div>
+
     </footer>
 
-    <script src="js/main.js"></script>
 
 </body>
+<<<<<<< HEAD
 </html>
 
+=======
+
+</html>
