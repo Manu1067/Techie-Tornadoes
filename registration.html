@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | Techie-Tornadoes</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+                <span class="brand-icon">〰</span>
+                <span>Techie-Tornadoes</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="events.html">
+                    Events
+                </a>
+
+                <a href="registration.html" class="active">
+                    Register
+                </a>
+
+            </nav>
+
+            <a href="registration.html" class="login-btn">
+                <span>♙</span>
+                Login / Register
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= REGISTRATION PAGE ================= -->
+
+    <main class="registration-page">
+
+
+        <!-- ================= LEFT SECTION ================= -->
+
+        <section class="registration-intro">
+
+            <div class="intro-content">
+
+                <p class="intro-eyebrow">
+                    JOIN THE COMMUNITY
+                </p>
+
+                <h1>
+                    Register <span>Now!</span>
+                </h1>
+
+                <p class="intro-description">
+                    Be a part of Techie-Tornadoes and get access
+                    to exciting events, workshops, competitions
+                    and much more.
+                </p>
+
+
+                <!-- STATS -->
+
+                <div class="intro-stats">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ♧
+                        </div>
+
+                        <div>
+                            <strong>5000+</strong>
+                            <span>Active Members</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ▣
+                        </div>
+
+                        <div>
+                            <strong>50+</strong>
+                            <span>Events Every Year</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ♜
+                        </div>
+
+                        <div>
+                            <strong>₹5L+</strong>
+                            <span>Prize Pool</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FORM SECTION ================= -->
+
+        <section class="registration-form-section">
+
+            <div class="registration-card">
+
+                <div class="form-heading">
+
+                    <div class="form-heading-icon">
+                        ♙
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Create Your Account
+                        </h2>
+
+                        <p>
+                            Fill in the details below to get started.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form
+                    id="registrationForm"
+                    class="registration-form"
+                >
+
+
+                    <!-- ROW 1 -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span>♙</span>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span>✉</span>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ROW 2 -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span>☎</span>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="Enter your phone number"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="college">
+                                College / Organization
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span>♜</span>
+
+                                <input
+                                    type="text"
+                                    id="college"
+                                    name="college"
+                                    placeholder="Enter your college name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ROW 3 -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="year">
+                                Year of Study
+                            </label>
+
+                            <select
+                                id="year"
+                                name="year"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your year
+                                </option>
+
+                                <option value="1">
+                                    First Year
+                                </option>
+
+                                <option value="2">
+                                    Second Year
+                                </option>
+
+                                <option value="3">
+                                    Third Year
+                                </option>
+
+                                <option value="4">
+                                    Fourth Year
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="branch">
+                                Branch / Department
+                            </label>
+
+                            <select
+                                id="branch"
+                                name="branch"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your branch
+                                </option>
+
+                                <option value="cse">
+                                    Computer Science & Engineering
+                                </option>
+
+                                <option value="ece">
+                                    Electronics & Communication Engineering
+                                </option>
+
+                                <option value="eee">
+                                    Electrical & Electronics Engineering
+                                </option>
+
+                                <option value="mech">
+                                    Mechanical Engineering
+                                </option>
+
+                                <option value="civil">
+                                    Civil Engineering
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ROW 4 -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span>▣</span>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Create a password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="password"
+                                >
+                                    ◉
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span>▣</span>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Confirm your password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="confirmPassword"
+                                >
+                                    ◉
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+
+                    <div class="terms">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span class="terms-text">
+                                I agree to the
+                                <a href="#">
+                                    Terms & Conditions
+                                </a>
+                                and
+                                <a href="#">
+                                    Privacy Policy
+                                </a>.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- ERROR MESSAGE -->
+
+                    <div
+                        id="formMessage"
+                        class="form-message"
+                    ></div>
+
+
+                    <!-- REGISTER BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="register-button"
+                    >
+
+                        Register Now
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="form-divider">
+
+                        <span></span>
+
+                        <p>
+                            or register with
+                        </p>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- SOCIAL BUTTONS -->
+
+                    <div class="social-register">
+
+                        <button type="button">
+                            <strong>G</strong>
+                            Google
+                        </button>
+
+                        <button type="button">
+                            <strong>in</strong>
+                            LinkedIn
+                        </button>
+
+                        <button type="button">
+                            <strong>●</strong>
+                            GitHub
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= WHY JOIN ================= -->
+
+    <section class="why-join">
+
+        <div class="why-container">
+
+            <div class="why-heading">
+
+                <h2>
+                    Why Join Us?
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="benefits-grid">
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        ♧
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Connect with Peers
+                        </h3>
+
+                        <p>
+                            Meet like-minded students and
+                            build your network.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        ♜
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Compete & Win
+                        </h3>
+
+                        <p>
+                            Participate in exciting events
+                            and win amazing prizes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        💡
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Learn & Grow
+                        </h3>
+
+                        <p>
+                            Attend workshops and learn
+                            from industry experts.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🚀
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Build Your Future
+                        </h3>
+
+                        <p>
+                            Gain exposure and boost your
+                            skills for a better tomorrow.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOGIN CTA ================= -->
+
+    <section class="login-cta">
+
+        <div class="login-cta-container">
+
+            <div class="login-cta-icon">
+                ♧
+            </div>
+
+            <div>
+
+                <h2>
+                    Already have an account?
+                </h2>
+
+                <p>
+                    Login to your account and continue your journey.
+                </p>
+
+            </div>
+
+            <a href="#">
+                Login Here
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <p>
+                © 2026 Techie-Tornadoes. All rights reserved.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#">
+                    About Us
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+            </div>
+
+            <div class="social-links">
+
+                <a href="#">◎</a>
+                <a href="#">in</a>
+                <a href="#">●</a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/registration.js"></script>
+
+</body>
+
+</html>
