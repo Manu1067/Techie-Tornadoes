@@ -1,84 +1,912 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Techie-Tornadoes| Events</title>
+    <title>Events | Techie-Tornadoes</title>
+
+    <!-- Main website CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
+
+    <!-- Events page CSS -->
+    <link rel="stylesheet" href="css/events.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="events.html">Events</a>
-            <a href="registration.html">Register</a>
-        </nav>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+                <span class="brand-icon">〰</span>
+                <span>Techie-Tornadoes</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="events.html" class="active">
+                    Events
+                </a>
+
+                <a href="registration.html">
+                    Register
+                </a>
+
+            </nav>
+
+            <a href="registration.html" class="login-btn">
+                <span>♙</span>
+                Login / Register
+            </a>
+
+        </div>
+
     </header>
 
-    <main>
 
-        <section id="events">
+    <!-- ================= HERO ================= -->
 
-            <h1>Explore Events</h1>
+    <section class="events-hero">
 
-            <p>
-               Explore a world of technical opportunities designed to challenge, inspire, and connect the next generation of innovators. From competitive coding and AI challenges to cybersecurity battles, web development sprints, cloud workshops, and data-driven competitions, discover events that match your interests and skills. Find your challenge, connect with like-minded students, and take the next step in your tech journey.
-            </p>
+        <div class="events-hero-content">
 
-            <div id="event-search">
+            <div class="events-hero-text">
 
-                <label for="searchInput">Search Events</label>
+                <p class="events-eyebrow">
+                    ALL EVENTS
+                </p>
 
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search by event name..."
+                <h1>
+                    Explore <span>Events</span>
+                </h1>
+
+                <p>
+                    Browse through exciting technical events,
+                    workshops and competitions. Find your next
+                    challenge.
+                </p>
+
+            </div>
+
+            <div class="events-hero-image">
+
+                <img
+                    src="assets/images/hero/events-hero.jpg"
+                    alt="Students attending a technology event"
                 >
 
             </div>
 
-            <div id="event-filter">
+        </div>
 
-                <label for="categoryFilter">Filter by Category</label>
+    </section>
 
-                <select id="categoryFilter">
 
-                    <option value="all">All Categories</option>
-                    <option value="coding">Coding</option>
-                    <option value="ai">AI / ML</option>
-                    <option value="cybersecurity">Cybersecurity</option>
-                    <option value="web">Web Development</option>
-                    <option value="cloud">Cloud</option>
-                    <option value="data">Data Science</option>
+    <!-- ================= EVENTS SECTION ================= -->
 
-                </select>
+    <main class="events-main">
+
+        <!-- SEARCH / FILTER -->
+
+        <section class="event-controls">
+
+            <div class="search-box">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search events by name, category or keyword..."
+                    aria-label="Search events"
+                >
 
             </div>
 
 
+            <select class="filter-select">
 
-            <div id="eventContainer">
+                <option value="">
+                    All Categories
+                </option>
 
-            </div>
+                <option>
+                    Coding
+                </option>
 
-            <p id="noEvents" hidden>
-            </p>
+                <option>
+                    Robotics
+                </option>
+
+                <option>
+                    Cyber Security
+                </option>
+
+                <option>
+                    Innovation
+                </option>
+
+                <option>
+                    Workshop
+                </option>
+
+                <option>
+                    Cloud Computing
+                </option>
+
+            </select>
+
+
+            <select class="filter-select">
+
+                <option value="">
+                    All Dates
+                </option>
+
+                <option>
+                    June 2026
+                </option>
+
+                <option>
+                    July 2026
+                </option>
+
+            </select>
+
+
+            <button class="search-button">
+                Search
+            </button>
 
         </section>
 
+
+        <!-- CATEGORY FILTERS -->
+
+        <div class="category-filters">
+
+            <button class="category-filter active">
+                All Events
+            </button>
+
+            <button class="category-filter">
+                <span>〈/〉</span>
+                Coding
+            </button>
+
+            <button class="category-filter">
+                <span>🤖</span>
+                Robotics
+            </button>
+
+            <button class="category-filter">
+                <span>♢</span>
+                Cyber Security
+            </button>
+
+            <button class="category-filter">
+                <span>💡</span>
+                Innovation
+            </button>
+
+            <button class="category-filter">
+                <span>♩</span>
+                Workshop
+            </button>
+
+            <button class="category-filter">
+                <span>☁</span>
+                Cloud Computing
+            </button>
+
+        </div>
+
+
+        <!-- ================= EVENT LIST ================= -->
+
+        <section class="event-list">
+
+
+            <!-- ================= CODESPRINT ================= -->
+
+            <article class="event-row">
+
+                <div class="event-image">
+
+                    <img
+                        src="assets/images/events/codesprint.jpg"
+                        alt="CodeSprint"
+                    >
+
+                    <div class="event-image-icon blue">
+                        &lt;/&gt;
+                    </div>
+
+                </div>
+
+
+                <div class="event-main-info">
+
+                    <h2>
+                        CodeSprint
+                    </h2>
+
+                    <div class="event-basic-info">
+
+                        <span>
+                            ▣ &nbsp; 15 Jun 2026
+                        </span>
+
+                        <span>
+                            ⌖ &nbsp; Online
+                        </span>
+
+                    </div>
+
+                    <span class="event-category blue-category">
+                        Coding
+                    </span>
+
+                </div>
+
+
+                <div class="event-description">
+
+                    <p>
+                        Showcase your programming skills in this
+                        thrilling coding competition. Solve
+                        real-world problems and compete with
+                        the best minds.
+                    </p>
+
+                    <div class="event-details">
+
+                        <div>
+                            <strong>♙</strong>
+                            <span>
+                                Team Size
+                                <b>1 - 3 Members</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Registration Deadline
+                                <b>10 Jun 2026</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>◷</strong>
+                            <span>
+                                Event Duration
+                                <b>6 Hours</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Prize Pool
+                                <b>₹50,000</b>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#" class="details-link">
+                    View Details
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- ================= ROBOWARS ================= -->
+
+            <article class="event-row">
+
+                <div class="event-image">
+
+                    <img
+                        src="assets/images/events/robowars.jpg"
+                        alt="RoboWars"
+                    >
+
+                    <div class="event-image-icon blue">
+                        🤖
+                    </div>
+
+                </div>
+
+
+                <div class="event-main-info">
+
+                    <h2>
+                        RoboWars
+                    </h2>
+
+                    <div class="event-basic-info">
+
+                        <span>
+                            ▣ &nbsp; 22 Jun 2026
+                        </span>
+
+                        <span>
+                            ⌖ &nbsp; Tech Campus, Pune
+                        </span>
+
+                    </div>
+
+                    <span class="event-category blue-category">
+                        Robotics
+                    </span>
+
+                </div>
+
+
+                <div class="event-description">
+
+                    <p>
+                        Design, build and battle your robot in
+                        the ultimate robotics showdown.
+                        Outsmart your opponents in exciting
+                        challenges.
+                    </p>
+
+                    <div class="event-details">
+
+                        <div>
+                            <strong>♙</strong>
+                            <span>
+                                Team Size
+                                <b>2 - 5 Members</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Registration Deadline
+                                <b>15 Jun 2026</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>◷</strong>
+                            <span>
+                                Event Duration
+                                <b>2 Days</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Prize Pool
+                                <b>₹75,000</b>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#" class="details-link">
+                    View Details
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- ================= CYBERSHIELD ================= -->
+
+            <article class="event-row">
+
+                <div class="event-image">
+
+                    <img
+                        src="assets/images/events/cybershield.jpg"
+                        alt="CyberShield"
+                    >
+
+                    <div class="event-image-icon blue">
+                        ♢
+                    </div>
+
+                </div>
+
+
+                <div class="event-main-info">
+
+                    <h2>
+                        CyberShield
+                    </h2>
+
+                    <div class="event-basic-info">
+
+                        <span>
+                            ▣ &nbsp; 29 Jun 2026
+                        </span>
+
+                        <span>
+                            ⌖ &nbsp; Online
+                        </span>
+
+                    </div>
+
+                    <span class="event-category blue-category">
+                        Cyber Security
+                    </span>
+
+                </div>
+
+
+                <div class="event-description">
+
+                    <p>
+                        Put your cybersecurity knowledge to the
+                        test. Capture the flag, ethical hacking,
+                        and more challenges await!
+                    </p>
+
+                    <div class="event-details">
+
+                        <div>
+                            <strong>♙</strong>
+                            <span>
+                                Team Size
+                                <b>1 - 4 Members</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Registration Deadline
+                                <b>20 Jun 2026</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>◷</strong>
+                            <span>
+                                Event Duration
+                                <b>8 Hours</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Prize Pool
+                                <b>₹60,000</b>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#" class="details-link">
+                    View Details
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- ================= INNOVATEX ================= -->
+
+            <article class="event-row">
+
+                <div class="event-image">
+
+                    <img
+                        src="assets/images/events/innovatex.jpg"
+                        alt="InnovateX"
+                    >
+
+                    <div class="event-image-icon pink">
+                        💡
+                    </div>
+
+                </div>
+
+
+                <div class="event-main-info">
+
+                    <h2>
+                        InnovateX
+                    </h2>
+
+                    <div class="event-basic-info">
+
+                        <span>
+                            ▣ &nbsp; 06 Jul 2026
+                        </span>
+
+                        <span>
+                            ⌖ &nbsp; Innovation Hub
+                        </span>
+
+                    </div>
+
+                    <span class="event-category pink-category">
+                        Innovation
+                    </span>
+
+                </div>
+
+
+                <div class="event-description">
+
+                    <p>
+                        Bring your ideas to life! Present your
+                        innovative solutions to real-world
+                        problems and make an impact.
+                    </p>
+
+                    <div class="event-details">
+
+                        <div>
+                            <strong>♙</strong>
+                            <span>
+                                Team Size
+                                <b>2 - 4 Members</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Registration Deadline
+                                <b>30 Jun 2026</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>◷</strong>
+                            <span>
+                                Event Duration
+                                <b>1 Day</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Prize Pool
+                                <b>₹40,000</b>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#" class="details-link pink-link">
+                    View Details
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- ================= TECHTALKS ================= -->
+
+            <article class="event-row">
+
+                <div class="event-image">
+
+                    <img
+                        src="assets/images/events/techtalks.jpg"
+                        alt="TechTalks"
+                    >
+
+                    <div class="event-image-icon pink">
+                        ♫
+                    </div>
+
+                </div>
+
+
+                <div class="event-main-info">
+
+                    <h2>
+                        TechTalks
+                    </h2>
+
+                    <div class="event-basic-info">
+
+                        <span>
+                            ▣ &nbsp; 13 Jul 2026
+                        </span>
+
+                        <span>
+                            ⌖ &nbsp; Auditorium, Delhi
+                        </span>
+
+                    </div>
+
+                    <span class="event-category pink-category">
+                        Workshop
+                    </span>
+
+                </div>
+
+
+                <div class="event-description">
+
+                    <p>
+                        Insightful talks from industry experts
+                        covering the latest trends in technology
+                        and innovation.
+                    </p>
+
+                    <div class="event-details">
+
+                        <div>
+                            <strong>♙</strong>
+                            <span>
+                                Team Size
+                                <b>Individual</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Registration Deadline
+                                <b>10 Jul 2026</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>◷</strong>
+                            <span>
+                                Event Duration
+                                <b>1 Day</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Entry Fee
+                                <b>₹299</b>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#" class="details-link pink-link">
+                    View Details
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- ================= CLOUDCRAFT ================= -->
+
+            <article class="event-row">
+
+                <div class="event-image">
+
+                    <img
+                        src="assets/images/events/cloudcraft.jpg"
+                        alt="CloudCraft"
+                    >
+
+                    <div class="event-image-icon blue">
+                        ☁
+                    </div>
+
+                </div>
+
+
+                <div class="event-main-info">
+
+                    <h2>
+                        CloudCraft
+                    </h2>
+
+                    <div class="event-basic-info">
+
+                        <span>
+                            ▣ &nbsp; 20 Jul 2026
+                        </span>
+
+                        <span>
+                            ⌖ &nbsp; Online
+                        </span>
+
+                    </div>
+
+                    <span class="event-category blue-category">
+                        Cloud Computing
+                    </span>
+
+                </div>
+
+
+                <div class="event-description">
+
+                    <p>
+                        Build cloud-powered solutions and explore
+                        modern cloud architecture through practical
+                        challenges.
+                    </p>
+
+                    <div class="event-details">
+
+                        <div>
+                            <strong>♙</strong>
+                            <span>
+                                Team Size
+                                <b>1 - 3 Members</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Registration Deadline
+                                <b>17 Jul 2026</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>◷</strong>
+                            <span>
+                                Event Duration
+                                <b>6 Hours</b>
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>▣</strong>
+                            <span>
+                                Prize Pool
+                                <b>₹45,000</b>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#" class="details-link">
+                    View Details
+                    <span>→</span>
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- ================= PAGINATION ================= -->
+
+        <div class="pagination">
+
+            <button class="page active">
+                1
+            </button>
+
+            <button class="page">
+                2
+            </button>
+
+            <button class="page">
+                3
+            </button>
+
+            <span>
+                ...
+            </span>
+
+            <button class="page next">
+                →
+            </button>
+
+        </div>
+
     </main>
 
+
+    <!-- ================= CTA ================= -->
+
+    <section class="events-cta">
+
+        <div class="events-cta-container">
+
+            <div class="cta-users">
+                ♧
+            </div>
+
+            <div>
+
+                <h2>
+                    Ready for your next challenge?
+                </h2>
+
+                <p>
+                    Join exciting events, meet amazing people
+                    and build your future.
+                </p>
+
+            </div>
+
+            <a href="registration.html">
+                Register Now
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
     <footer>
-        <p>&copy; 2026 TechFest Hub</p>
+
+        <div class="footer-container">
+
+            <p>
+                © 2026 Techie-Tornadoes. All rights reserved.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#">
+                    About Us
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+            </div>
+
+            <div class="social-links">
+
+                <a href="#">◎</a>
+                <a href="#">in</a>
+                <a href="#">●</a>
+
+            </div>
+
+        </div>
+
     </footer>
 
-    <script src="js/events.js"></script>
-    <script src="js/search-filter.js"></script>
-    <script src="js/main.js"></script>
 </body>
-</html>
 
+</html>
