@@ -1,1 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>TechVerse | Discover. Compete. Innovate.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">✦</span>
+                TechVerse
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#events">Events</a>
+                <a href="#about">About</a>
+                <a href="#my-events">My Events</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">
+                    ◐
+                </button>
+
+                <a href="#events" class="nav-cta">
+                    Explore Events
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+        <section id="home" class="hero">
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        2026 TECH EVENT SEASON
+                    </div>
+
+                    <h1>
+                        Where Ideas
+                        <span>Become Innovation.</span>
+                    </h1>
+
+                    <p>
+                        Discover hackathons, coding competitions, workshops,
+                        technical talks and more — all in one place.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#events" class="primary-btn">
+                            Explore Events
+                            <span>→</span>
+                        </a>
+
+                        <a href="#about" class="secondary-btn">
+                            Learn More
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div class="stat">
+                            <strong>10+</strong>
+                            <span>Events</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>500+</strong>
+                            <span>Participants</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>20+</strong>
+                            <span>Colleges</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="hero-card main-card">
+
+                        <div class="card-top">
+                            <span class="live-tag">
+                                ● LIVE
+                            </span>
+
+                            <span class="event-number">
+                                01
+                            </span>
+                        </div>
+
+                        <div class="hero-card-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <h3>
+                            CodeSprint 2026
+                        </h3>
+
+                        <p>
+                            National Coding Challenge
+                        </p>
+
+                        <div class="hero-card-details">
+                            <span>📅 Aug 28</span>
+                            <span>👥 250+</span>
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card floating-one">
+                        <span>⚡</span>
+                        <div>
+                            <strong>8 Events</strong>
+                            <small>Open for registration</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-two">
+                        <span>🏆</span>
+                        <div>
+                            <strong>Win & Learn</strong>
+                            <small>Compete with the best</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EVENTS ================= -->
+        <section id="events" class="events-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            DISCOVER
+                        </span>
+
+                        <h2>
+                            Find Your Next
+                            <span>Challenge.</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Explore technical events designed to help
+                        you learn, compete and connect.
+                    </p>
+
+                </div>
+
+
+                <!-- SEARCH + FILTER -->
+                <div class="event-controls">
+
+                    <div class="search-box">
+                        <span>⌕</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search events..."
+                        >
+                    </div>
+
+
+                    <div class="filter-wrapper">
+
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="Hackathon">Hackathon</option>
+                            <option value="Coding">Coding</option>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Robotics">Robotics</option>
+                            <option value="AI & ML">AI & ML</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT CARDS -->
+                <div id="eventsGrid" class="events-grid">
+
+                    <!-- JavaScript will generate event cards here -->
+
+                </div>
+
+
+                <div id="noEvents" class="no-events hidden">
+                    <div>🔍</div>
+                    <h3>No events found</h3>
+                    <p>
+                        Try changing your search or category filter.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="about-section">
+
+            <div class="container about-container">
+
+                <div class="about-content">
+
+                    <span class="section-label">
+                        WHY TECHVERSE?
+                    </span>
+
+                    <h2>
+                        One Platform.
+                        <span>Endless Possibilities.</span>
+                    </h2>
+
+                    <p>
+                        TechVerse makes it easier for students to discover
+                        technical events, participate in competitions and
+                        connect with opportunities to grow.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Discover</h3>
+                        <p>
+                            Find exciting technical events
+                            from different categories.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Learn</h3>
+                        <p>
+                            Attend workshops and sessions
+                            to develop new skills.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Compete</h3>
+                        <p>
+                            Challenge yourself and showcase
+                            your technical abilities.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Connect</h3>
+                        <p>
+                            Meet students and innovators
+                            from different colleges.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MY EVENTS ================= -->
+        <section id="my-events" class="my-events-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            YOUR JOURNEY
+                        </span>
+
+                        <h2>
+                            My <span>Events.</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Events you register for will appear here.
+                    </p>
+
+                </div>
+
+
+                <div id="myEventsContainer" class="my-events-container">
+
+                    <div id="emptyMyEvents" class="empty-events">
+
+                        <div class="empty-icon">
+                            📅
+                        </div>
+
+                        <h3>
+                            No registrations yet
+                        </h3>
+
+                        <p>
+                            Explore the events above and register
+                            for your next challenge.
+                        </p>
+
+                        <a href="#events" class="primary-btn">
+                            Explore Events →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= REGISTRATION MODAL ================= -->
+
+    <div id="registrationModal" class="modal hidden">
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="modal-close"
+                aria-label="Close registration form"
+            >
+                ×
+            </button>
+
+            <div class="modal-header">
+
+                <span class="section-label">
+                    EVENT REGISTRATION
+                </span>
+
+                <h2>
+                    Join the <span>Challenge.</span>
+                </h2>
+
+                <p id="selectedEventText">
+                    Complete the form below to register.
+                </p>
+
+            </div>
+
+
+            <form id="registrationForm">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                    <small class="error-message" id="nameError"></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                    <small class="error-message" id="emailError"></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="college">
+                        College
+                    </label>
+
+                    <input
+                        type="text"
+                        id="college"
+                        placeholder="Enter your college"
+                        required
+                    >
+
+                    <small class="error-message" id="collegeError"></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="eventSelection">
+                        Select Event
+                    </label>
+
+                    <select id="eventSelection" required>
+                        <option value="">
+                            Select an event
+                        </option>
+                    </select>
+
+                    <small class="error-message" id="eventError"></small>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Complete Registration
+                    <span>→</span>
+                </button>
+
+            </form>
+
+
+            <div id="registrationSuccess" class="registration-success hidden">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Registration Successful!
+                </h3>
+
+                <p>
+                    You're officially registered.
+                    See you at the event!
+                </p>
+
+                <button id="successClose" class="primary-btn">
+                    Done
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#" class="logo">
+                    <span class="logo-icon">✦</span>
+                    TechVerse
+                </a>
+
+                <p>
+                    Discover. Compete. Innovate.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">Home</a>
+                <a href="#events">Events</a>
+                <a href="#about">About</a>
+                <a href="#my-events">My Events</a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 TechVerse. Built for CodeForge WebSprint.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
