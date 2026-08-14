@@ -45,7 +45,6 @@ function initializeNavigation() {
 // 2. MOBILE HAMBURGER MENU
 // =====================================================
 function initializeMobileMenu() {
-    const navbar = document.querySelector(".navbar");
     const navContainer = document.querySelector(".nav-container");
     const navLinks = document.querySelector(".nav-links");
 
@@ -62,7 +61,7 @@ function initializeMobileMenu() {
     `;
 
     // Insert toggle button before login-btn or right container
-    const loginBtn = navContainer.querySelector(".login-btn") || navContainer.querySelector(".nav-right");
+    const loginBtn = navContainer.querySelector(".login-btn") || navContainer.querySelector(".nav-right-actions");
     if (loginBtn) {
         navContainer.insertBefore(toggleBtn, loginBtn);
     } else {
@@ -104,12 +103,14 @@ function initializeNavbarScrollEffect() {
 }
 
 // =====================================================
-// 4. HIGHLIGHT EVENT GALLERY SLIDER
+// 4. HIGHLIGHT EVENT GALLERY SLIDER (with autoplay)
 // =====================================================
 function initializeHighlightGalleries() {
     const highlightCards = document.querySelectorAll(".highlight-event");
+    const AUTOPLAY_DELAY = 4000; // ms between automatic slides
 
     highlightCards.forEach((card) => {
+        const gallery = card.querySelector(".highlight-gallery");
         const mainImage = card.querySelector(".main-event-image");
         const thumbnails = card.querySelectorAll(".event-thumbnails img");
         const prevBtn = card.querySelector(".gallery-prev");
@@ -118,6 +119,7 @@ function initializeHighlightGalleries() {
         if (!mainImage || thumbnails.length === 0) return;
 
         let currentIndex = 0;
+        let autoplayTimer = null;
 
         function updateGallery(index) {
             if (index < 0) index = thumbnails.length - 1;
@@ -132,25 +134,55 @@ function initializeHighlightGalleries() {
             }
         }
 
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayTimer = setInterval(() => {
+                updateGallery(currentIndex + 1);
+            }, AUTOPLAY_DELAY);
+        }
+
+        function stopAutoplay() {
+            if (autoplayTimer) {
+                clearInterval(autoplayTimer);
+                autoplayTimer = null;
+            }
+        }
+
+        // Any manual interaction restarts the autoplay clock
+        // so the slide doesn't jump right after the user acts.
+        function handleManualChange(index) {
+            updateGallery(index);
+            startAutoplay();
+        }
+
         thumbnails.forEach((thumb, idx) => {
             thumb.addEventListener("click", () => {
-                updateGallery(idx);
+                handleManualChange(idx);
             });
         });
 
         if (prevBtn) {
             prevBtn.addEventListener("click", (e) => {
                 e.preventDefault();
-                updateGallery(currentIndex - 1);
+                handleManualChange(currentIndex - 1);
             });
         }
 
         if (nextBtn) {
             nextBtn.addEventListener("click", (e) => {
                 e.preventDefault();
-                updateGallery(currentIndex + 1);
+                handleManualChange(currentIndex + 1);
             });
         }
+
+        // Pause on hover so people can actually look at a slide,
+        // resume when the mouse leaves.
+        if (gallery) {
+            gallery.addEventListener("mouseenter", stopAutoplay);
+            gallery.addEventListener("mouseleave", startAutoplay);
+        }
+
+        startAutoplay();
     });
 }
 
