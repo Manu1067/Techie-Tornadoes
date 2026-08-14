@@ -1,361 +1,239 @@
 // =====================================================
 // TECHIE-TORNADOES
-// Main JavaScript
-// Shared functionality for the website
+// Main Website JavaScript
+// Shared global functionality and interactive controllers
 // =====================================================
- 
- 
-// =====================================================
-// 1. WAIT FOR HTML TO LOAD
-// =====================================================
- 
+
 document.addEventListener("DOMContentLoaded", () => {
- 
-    console.log("Techie-Tornadoes loaded successfully.");
- 
+    console.log("Techie-Tornadoes initialized.");
+
     initializeNavigation();
-    initializeSmoothScrolling();
-    initializeEventCards();
+    initializeMobileMenu();
     initializeNavbarScrollEffect();
+    initializeHighlightGalleries();
     initializeButtonEffects();
     initializeScrollAnimations();
     initializeImageHandling();
     updateCurrentYear();
- 
 });
- 
- 
+
 // =====================================================
-// 2. NAVIGATION
+// 1. NAVIGATION ACTIVE STATE
 // =====================================================
- 
 function initializeNavigation() {
- 
-    const currentPage = window.location.pathname
-        .split("/")
-        .pop();
- 
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
     const navLinks = document.querySelectorAll(".nav-links a");
- 
-    navLinks.forEach(link => {
- 
+
+    navLinks.forEach((link) => {
         const href = link.getAttribute("href");
- 
-        // Skip links with no href, or hash-only/external links
-        if (!href || href.startsWith("#") || href.startsWith("http")) {
-            return;
-        }
- 
+        if (!href || href.startsWith("#") || href.startsWith("http")) return;
+
         const linkPage = href.split("/").pop();
- 
-        // Remove existing active class
         link.classList.remove("active");
- 
-        // Add active class to current page
+
         if (
             linkPage === currentPage ||
-            (currentPage === "" && linkPage === "index.html")
+            (currentPage === "" && linkPage === "index.html") ||
+            (currentPage === "index.html" && linkPage === "index.html")
         ) {
             link.classList.add("active");
         }
- 
     });
- 
 }
- 
- 
+
 // =====================================================
-// 3. SMOOTH SCROLLING
+// 2. MOBILE HAMBURGER MENU
 // =====================================================
- 
-function initializeSmoothScrolling() {
- 
-    const anchorLinks = document.querySelectorAll(
-        'a[href^="#"]'
-    );
- 
-    anchorLinks.forEach(link => {
- 
-        link.addEventListener("click", function (event) {
- 
-            const targetId = this.getAttribute("href");
- 
-            // Ignore empty #
-            if (targetId === "#" || !targetId) {
-                return;
-            }
- 
-            let targetElement;
- 
-            try {
-                targetElement = document.querySelector(targetId);
-            } catch (error) {
-                // Invalid selector (e.g. href="#123abc") — bail out quietly
-                return;
-            }
- 
-            if (targetElement) {
- 
-                event.preventDefault();
- 
-                targetElement.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
- 
-            }
- 
-        });
- 
-    });
- 
-}
- 
- 
-// =====================================================
-// 4. EVENT CARD INTERACTION
-// =====================================================
- 
-function initializeEventCards() {
- 
-    const eventCards =
-        document.querySelectorAll(".event-card");
- 
-    eventCards.forEach(card => {
- 
-        card.addEventListener("mouseenter", () => {
- 
-            card.classList.add("event-card-hover");
- 
-        });
- 
-        card.addEventListener("mouseleave", () => {
- 
-            card.classList.remove("event-card-hover");
- 
-        });
- 
-    });
- 
-}
- 
- 
-// =====================================================
-// 5. NAVBAR SCROLL EFFECT
-// (moved inside DOMContentLoaded — querying for .navbar
-// at parse time could return null if this script runs
-// before the DOM is built)
-// =====================================================
- 
-function initializeNavbarScrollEffect() {
- 
+function initializeMobileMenu() {
     const navbar = document.querySelector(".navbar");
- 
-    if (!navbar) {
-        return;
+    const navContainer = document.querySelector(".nav-container");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (!navContainer || document.querySelector(".mobile-menu-toggle")) return;
+
+    // Create hamburger toggle button
+    const toggleBtn = document.createElement("button");
+    toggleBtn.className = "mobile-menu-toggle";
+    toggleBtn.setAttribute("aria-label", "Toggle navigation menu");
+    toggleBtn.innerHTML = `
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    `;
+
+    // Insert toggle button before login-btn or right container
+    const loginBtn = navContainer.querySelector(".login-btn") || navContainer.querySelector(".nav-right");
+    if (loginBtn) {
+        navContainer.insertBefore(toggleBtn, loginBtn);
+    } else {
+        navContainer.appendChild(toggleBtn);
     }
- 
-    window.addEventListener("scroll", () => {
- 
-        if (window.scrollY > 20) {
- 
-            navbar.classList.add("navbar-scrolled");
- 
-        } else {
- 
-            navbar.classList.remove("navbar-scrolled");
- 
-        }
- 
+
+    toggleBtn.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("mobile-open");
+        toggleBtn.classList.toggle("is-active");
+        document.body.classList.toggle("menu-open", isOpen);
     });
- 
+
+    // Close mobile menu on clicking any link
+    if (navLinks) {
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("mobile-open");
+                toggleBtn.classList.remove("is-active");
+                document.body.classList.remove("menu-open");
+            });
+        });
+    }
 }
- 
- 
+
 // =====================================================
-// 6. BUTTON RIPPLE EFFECT
+// 3. NAVBAR SCROLL SHADOW & BG
 // =====================================================
- 
+function initializeNavbarScrollEffect() {
+    const navbar = document.querySelector(".navbar");
+    if (!navbar) return;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add("navbar-scrolled");
+        } else {
+            navbar.classList.remove("navbar-scrolled");
+        }
+    });
+}
+
+// =====================================================
+// 4. HIGHLIGHT EVENT GALLERY SLIDER
+// =====================================================
+function initializeHighlightGalleries() {
+    const highlightCards = document.querySelectorAll(".highlight-event");
+
+    highlightCards.forEach((card) => {
+        const mainImage = card.querySelector(".main-event-image");
+        const thumbnails = card.querySelectorAll(".event-thumbnails img");
+        const prevBtn = card.querySelector(".gallery-prev");
+        const nextBtn = card.querySelector(".gallery-next");
+
+        if (!mainImage || thumbnails.length === 0) return;
+
+        let currentIndex = 0;
+
+        function updateGallery(index) {
+            if (index < 0) index = thumbnails.length - 1;
+            if (index >= thumbnails.length) index = 0;
+
+            currentIndex = index;
+            const selectedThumb = thumbnails[currentIndex];
+            if (selectedThumb) {
+                mainImage.src = selectedThumb.src;
+                thumbnails.forEach((t) => t.classList.remove("active-thumb"));
+                selectedThumb.classList.add("active-thumb");
+            }
+        }
+
+        thumbnails.forEach((thumb, idx) => {
+            thumb.addEventListener("click", () => {
+                updateGallery(idx);
+            });
+        });
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                updateGallery(currentIndex - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                updateGallery(currentIndex + 1);
+            });
+        }
+    });
+}
+
+// =====================================================
+// 5. BUTTON RIPPLE EFFECT
+// =====================================================
 function initializeButtonEffects() {
- 
     const buttons = document.querySelectorAll(
-        ".primary-btn, .secondary-btn, .view-events, .cta-button, .login-btn"
+        ".primary-btn, .secondary-btn, .view-events, .cta-button, .login-btn, .register-button"
     );
- 
-    buttons.forEach(button => {
- 
+
+    buttons.forEach((button) => {
         button.addEventListener("click", function (event) {
- 
-            const ripple =
-                document.createElement("span");
- 
+            const ripple = document.createElement("span");
             ripple.classList.add("ripple");
- 
-            const rect =
-                this.getBoundingClientRect();
- 
-            const size =
-                Math.max(rect.width, rect.height);
- 
+
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+
             ripple.style.width = `${size}px`;
             ripple.style.height = `${size}px`;
- 
-            ripple.style.left =
-                `${event.clientX - rect.left - size / 2}px`;
- 
-            ripple.style.top =
-                `${event.clientY - rect.top - size / 2}px`;
- 
+            ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
+            ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
+
             this.appendChild(ripple);
- 
+
             setTimeout(() => {
- 
                 ripple.remove();
- 
             }, 600);
- 
         });
- 
     });
- 
 }
- 
- 
+
 // =====================================================
-// 7. INTERSECTION OBSERVER
-// Adds animation when sections enter the screen
+// 6. INTERSECTION OBSERVER ANIMATIONS
 // =====================================================
- 
 function initializeScrollAnimations() {
- 
-    const animatedElements =
-        document.querySelectorAll(
-            ".event-card, .section-header, .cta-container"
-        );
- 
+    const animatedElements = document.querySelectorAll(
+        ".highlight-event, .section-header, .cta-container, .event-row, .registration-card"
+    );
+
     if (!("IntersectionObserver" in window)) {
- 
-        animatedElements.forEach(element => {
-            element.classList.add("visible");
-        });
- 
+        animatedElements.forEach((el) => el.classList.add("visible"));
         return;
- 
     }
- 
-    const observer =
-        new IntersectionObserver(
-            (entries, observer) => {
- 
-                entries.forEach(entry => {
- 
-                    if (entry.isIntersecting) {
- 
-                        entry.target.classList.add(
-                            "visible"
-                        );
- 
-                        observer.unobserve(
-                            entry.target
-                        );
- 
-                    }
- 
-                });
- 
-            },
-            {
-                threshold: 0.15
-            }
-        );
- 
-    animatedElements.forEach(element => {
- 
-        element.classList.add("scroll-animate");
- 
-        observer.observe(element);
- 
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+
+    animatedElements.forEach((el) => {
+        el.classList.add("scroll-animate");
+        observer.observe(el);
     });
- 
 }
- 
- 
+
 // =====================================================
-// 8. IMAGE ERROR HANDLING
+// 7. IMAGE FALLBACK HANDLING
 // =====================================================
- 
 function initializeImageHandling() {
- 
-    const images =
-        document.querySelectorAll("img");
- 
-    images.forEach(image => {
- 
-        image.addEventListener("error", () => {
- 
-            console.warn(
-                `Image could not be loaded: ${image.src}`
-            );
- 
-            image.classList.add("image-error");
- 
+    const images = document.querySelectorAll("img");
+    images.forEach((img) => {
+        img.addEventListener("error", () => {
+            img.classList.add("image-error");
         });
- 
     });
- 
 }
- 
- 
+
 // =====================================================
-// 9. CURRENT YEAR
+// 8. UPDATE FOOTER YEAR
 // =====================================================
- 
 function updateCurrentYear() {
- 
-    const yearElements =
-        document.querySelectorAll(
-            "[data-current-year]"
-        );
- 
-    const currentYear =
-        new Date().getFullYear();
- 
-    yearElements.forEach(element => {
- 
-        element.textContent = currentYear;
- 
+    const yearElements = document.querySelectorAll("[data-current-year]");
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach((el) => {
+        el.textContent = currentYear;
     });
- 
 }
- 
- 
-// =====================================================
-// 10. UTILITY FUNCTIONS
-// These can be used by other JavaScript files later
-// =====================================================
- 
-function showMessage(message, type = "info") {
- 
-    console.log(`[${type.toUpperCase()}] ${message}`);
- 
-}
- 
- 
-function getElement(selector) {
- 
-    return document.querySelector(selector);
- 
-}
- 
- 
-function getElements(selector) {
- 
-    return document.querySelectorAll(selector);
- 
-}
- 
- 
-// =====================================================
-// END OF MAIN.JS
-// =====================================================
- 

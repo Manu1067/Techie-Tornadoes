@@ -1,0 +1,293 @@
+/* =====================================================
+   TECHIE-TORNADOES
+   Responsive Media Queries & Mobile Menu Drawer
+   ===================================================== */
+
+/* ================= MOBILE HAMBURGER TOGGLE ================= */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 0;
+}
+
+.mobile-menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.mobile-menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ================= TABLET & DESKTOP (1024px to 1200px) ================= */
+@media (max-width: 1100px) {
+    .nav-container {
+        padding: 0 25px;
+    }
+
+    .hero-content {
+        grid-template-columns: 50% 50%;
+    }
+
+    .highlight-event {
+        grid-template-columns: 55% 45%;
+    }
+
+    .event-row {
+        grid-template-columns: 160px 170px 1fr 120px;
+        gap: 15px;
+    }
+
+    .registration-page {
+        grid-template-columns: 45% 55%;
+    }
+
+    .intro-stats {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+/* ================= MEDIUM TABLET (768px to 1024px) ================= */
+@media (max-width: 900px) {
+    .event-controls {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .event-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: left;
+    }
+
+    .event-image {
+        height: 180px;
+    }
+
+    .event-description {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .event-actions {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .registration-page {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-intro {
+        padding: 40px 20px;
+    }
+
+    .intro-content {
+        margin-left: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .registration-form-section {
+        padding: 25px 15px;
+    }
+}
+
+/* ================= MOBILE VIEWPORTS (Up to 768px) ================= */
+@media (max-width: 768px) {
+    /* Navbar Mobile Menu Drawer */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        gap: 30px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.mobile-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    /* Hero Responsive */
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text {
+        padding: 45px 20px;
+    }
+
+    .hero-text::after {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-btn, .secondary-btn {
+        width: 100%;
+    }
+
+    /* Event Highlights Responsive */
+    .highlight-event {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .highlight-gallery {
+        min-height: 280px;
+    }
+
+    .main-event-image {
+        height: 220px;
+    }
+
+    .gallery-arrow {
+        top: 110px;
+    }
+
+    .event-details {
+        padding: 25px 20px;
+    }
+
+    .event-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-info:nth-child(odd) {
+        border-right: none;
+    }
+
+    /* Events Search Controls Responsive */
+    .events-hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .events-hero-image {
+        height: 200px;
+    }
+
+    .events-hero-image::before {
+        display: none;
+    }
+
+    .events-main {
+        padding: 25px 15px 40px;
+    }
+
+    .event-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .category-filters {
+        padding-bottom: 8px;
+    }
+
+    /* Registration Form Responsive */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .registration-card {
+        padding: 25px 20px;
+    }
+
+    .social-register {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cta-container, .login-cta-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+/* ================= SMALL MOBILE (Up to 375px) ================= */
+@media (max-width: 375px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .brand {
+        font-size: 18px;
+    }
+
+    .brand-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .intro-content h1 {
+        font-size: 30px;
+    }
+}

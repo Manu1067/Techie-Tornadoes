@@ -4,20 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techie-Tornadoes | Discover. Build. Compete.</title>
+    <meta name="description" content="Discover the best technical events, workshops, hackathons and competitions for students with Techie-Tornadoes.">
 
-    <title>Techie-Tornadoes | Tech Events</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
     <!-- ================= NAVBAR ================= -->
-
     <header class="navbar">
-
         <div class="nav-container">
-
             <a href="index.html" class="brand">
                 <span class="brand-icon">〰</span>
                 <span>Techie-Tornadoes</span>
@@ -29,622 +34,277 @@
                 <a href="registration.html">Register</a>
             </nav>
 
-            <a href="registration.html" class="login-btn">
-                <span>♙</span>
-                Login / Register
-            </a>
-
+            <div class="nav-right-actions">
+                <button type="button" class="dark-mode-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <a href="registration.html" class="login-btn">
+                    <span>👤</span>
+                    Login / Register
+                </a>
+            </div>
         </div>
-
     </header>
 
-
     <!-- ================= HERO ================= -->
-
     <main>
-
         <section class="hero">
-
             <div class="hero-content">
-
                 <div class="hero-text">
-
-                    <p class="eyebrow">
-                        TECH EVENTS PLATFORM
-                    </p>
-
-                    <h1>
-                        Discover.
-                        <span>Build.</span>
-                        Compete.
-                    </h1>
-
+                    <p class="eyebrow">TECH EVENTS PLATFORM</p>
+                    <h1>Discover. <span class="turquoise">Build.</span> Compete.</h1>
                     <p class="hero-description">
-                        Discover the best technical events for students.
-                        <br>
+                        Discover the best technical events for students.<br>
                         Learn, innovate and compete with the best.
                     </p>
-
                     <div class="hero-buttons">
-
                         <a href="events.html" class="primary-btn">
-                            Explore Events
-                            <span>→</span>
+                            Explore Events <span>→</span>
                         </a>
-
                         <a href="#highlights" class="secondary-btn">
-                            <span>▷</span>
-                            How It Works
+                            <span>▶</span> How It Works
                         </a>
-
                     </div>
-
                 </div>
-
 
                 <div class="hero-image">
-
-                    <img
-                        src="assets/images/hero/hero.jpg"
-                        alt="Students collaborating on a technology project"
-                    >
-
+                    <img src="assets/images/hero/hero.jpg" alt="Students collaborating on tech project" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80';">
                 </div>
-
             </div>
-
         </section>
 
-
         <!-- ================= EVENT HIGHLIGHTS ================= -->
-
         <section id="highlights" class="highlights">
-
             <div class="section-header">
-
-                <h2>
-                    Event <span>Highlights</span>
-                </h2>
-
-                <p>
-                    Glimpses of our recent successful events.
-                </p>
-
+                <h2>Event <span>Highlights</span></h2>
+                <p>Glimpses of our recent successful events.</p>
             </div>
-
 
             <div class="highlight-events">
 
-
-                <!-- =================================================
-                     EVENT 1
-                     ================================================= -->
-
+                <!-- FEATURED EVENT 1: CODESPRINT -->
                 <article class="highlight-event">
-
-                    <!-- IMAGE SIDE -->
-
                     <div class="highlight-gallery">
-
-                        <img
-                            class="main-event-image"
-                            src="assets/images/events/codesprint-1.jpg"
-                            alt="CodeSprint 2026 event"
-                        >
-
-                        <button
-                            class="gallery-arrow gallery-prev"
-                            aria-label="Previous CodeSprint image"
-                        >
-                            ‹
-                        </button>
-
-                        <button
-                            class="gallery-arrow gallery-next"
-                            aria-label="Next CodeSprint image"
-                        >
-                            ›
-                        </button>
-
+                        <img class="main-event-image" src="assets/images/events/codesprint-1.jpg" alt="CodeSprint 2026 Event" onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80';">
+                        <button type="button" class="gallery-arrow gallery-prev" aria-label="Previous image">‹</button>
+                        <button type="button" class="gallery-arrow gallery-next" aria-label="Next image">›</button>
 
                         <div class="event-thumbnails">
-
-                            <img
-                                src="assets/images/events/codesprint-1.jpg"
-                                class="active-thumb"
-                                alt="CodeSprint image 1"
-                            >
-
-                            <img
-                                src="assets/images/events/codesprint-2.jpg"
-                                alt="CodeSprint image 2"
-                            >
-
-                            <img
-                                src="assets/images/events/codesprint-3.jpg"
-                                alt="CodeSprint image 3"
-                            >
-
-                            <img
-                                src="assets/images/events/codesprint-4.jpg"
-                                alt="CodeSprint image 4"
-                            >
-
-                            <img
-                                src="assets/images/events/codesprint-5.jpg"
-                                alt="CodeSprint image 5"
-                            >
-
+                            <img src="assets/images/events/codesprint-1.jpg" class="active-thumb" alt="CodeSprint thumbnail 1" onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/codesprint-2.jpg" alt="CodeSprint thumbnail 2" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/codesprint-3.jpg" alt="CodeSprint thumbnail 3" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/codesprint-4.jpg" alt="CodeSprint thumbnail 4" onerror="this.src='https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/codesprint-5.jpg" alt="CodeSprint thumbnail 5" onerror="this.src='https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=200&q=80';">
                         </div>
-
                     </div>
 
-
-                    <!-- DETAILS -->
-
                     <div class="event-details">
-
-                        <span class="past-event">
-                            PAST EVENT
-                        </span>
-
-                        <h3>
-                            CodeSprint 2026
-                        </h3>
-
+                        <span class="past-event">PAST EVENT</span>
+                        <h3>CodeSprint 2026</h3>
                         <p class="event-description">
-                            An intense coding competition where
-                            brilliant minds solved real-world
-                            problems under pressure.
+                            An intense coding competition where brilliant minds solved real-world problems under pressure.
                         </p>
 
-
                         <div class="event-info-grid">
-
                             <div class="event-info">
-
-                                <span class="info-icon">▣</span>
-
+                                <span class="info-icon">📅</span>
                                 <div>
                                     <strong>15 Jun 2026</strong>
                                     <small>Sunday</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">⌖</span>
-
+                                <span class="info-icon">📍</span>
                                 <div>
                                     <strong>Online</strong>
                                     <small>Virtual Event</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">♧</span>
-
+                                <span class="info-icon">👥</span>
                                 <div>
                                     <strong>120+</strong>
                                     <small>Participants</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">◇</span>
-
+                                <span class="info-icon">⚡</span>
                                 <div>
                                     <strong>Coding</strong>
                                     <small>Category</small>
                                 </div>
-
                             </div>
-
                         </div>
-
 
                         <a href="events.html" class="event-details-btn">
-                            View Event Details
-                            <span>→</span>
+                            View Event Details <span>→</span>
                         </a>
-
                     </div>
-
                 </article>
 
-
-
-                <!-- =================================================
-                     EVENT 2
-                     ================================================= -->
-
+                <!-- FEATURED EVENT 2: ROBOWARS -->
                 <article class="highlight-event">
-
                     <div class="highlight-gallery">
-
-                        <img
-                            class="main-event-image"
-                            src="assets/images/events/robowars-1.jpg"
-                            alt="RoboWars 2026 event"
-                        >
-
-                        <button
-                            class="gallery-arrow gallery-prev"
-                            aria-label="Previous RoboWars image"
-                        >
-                            ‹
-                        </button>
-
-                        <button
-                            class="gallery-arrow gallery-next"
-                            aria-label="Next RoboWars image"
-                        >
-                            ›
-                        </button>
-
+                        <img class="main-event-image" src="assets/images/events/robowars-1.jpg" alt="RoboWars 2026 Event" onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80';">
+                        <button type="button" class="gallery-arrow gallery-prev" aria-label="Previous image">‹</button>
+                        <button type="button" class="gallery-arrow gallery-next" aria-label="Next image">›</button>
 
                         <div class="event-thumbnails">
-
-                            <img
-                                src="assets/images/events/robowars-1.jpg"
-                                class="active-thumb"
-                                alt="RoboWars image 1"
-                            >
-
-                            <img
-                                src="assets/images/events/robowars-2.jpg"
-                                alt="RoboWars image 2"
-                            >
-
-                            <img
-                                src="assets/images/events/robowars-3.jpg"
-                                alt="RoboWars image 3"
-                            >
-
-                            <img
-                                src="assets/images/events/robowars-4.jpg"
-                                alt="RoboWars image 4"
-                            >
-
-                            <img
-                                src="assets/images/events/robowars-5.jpg"
-                                alt="RoboWars image 5"
-                            >
-
+                            <img src="assets/images/events/robowars-1.jpg" class="active-thumb" alt="RoboWars thumbnail 1" onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/robowars-2.jpg" alt="RoboWars thumbnail 2" onerror="this.src='https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/robowars-3.jpg" alt="RoboWars thumbnail 3" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/robowars-4.jpg" alt="RoboWars thumbnail 4" onerror="this.src='https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/robowars-5.jpg" alt="RoboWars thumbnail 5" onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=200&q=80';">
                         </div>
-
                     </div>
 
-
                     <div class="event-details">
-
-                        <span class="past-event">
-                            PAST EVENT
-                        </span>
-
-                        <h3>
-                            RoboWars 2026
-                        </h3>
-
+                        <span class="past-event">PAST EVENT</span>
+                        <h3>RoboWars 2026</h3>
                         <p class="event-description">
-                            Teams built and battled their robots
-                            in an exciting competition of strategy,
-                            skill and innovation.
+                            Teams built and battled their robots in an epic showdown of strategy, skills and innovation.
                         </p>
 
-
                         <div class="event-info-grid">
-
                             <div class="event-info">
-
-                                <span class="info-icon">▣</span>
-
+                                <span class="info-icon">📅</span>
                                 <div>
                                     <strong>22 Jun 2026</strong>
                                     <small>Sunday</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">⌖</span>
-
+                                <span class="info-icon">📍</span>
                                 <div>
-                                    <strong>Tech Campus</strong>
-                                    <small>Pune · Offline Event</small>
+                                    <strong>Tech Campus, Pune</strong>
+                                    <small>Offline Event</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">♧</span>
-
+                                <span class="info-icon">🤖</span>
                                 <div>
                                     <strong>80+</strong>
                                     <small>Teams</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">♕</span>
-
+                                <span class="info-icon">🏆</span>
                                 <div>
                                     <strong>₹75,000</strong>
                                     <small>Prize Pool</small>
                                 </div>
-
                             </div>
-
-
-                            <div class="event-info single-info">
-
-                                <span class="info-icon">◇</span>
-
-                                <div>
-                                    <strong>Robotics</strong>
-                                    <small>Category</small>
-                                </div>
-
-                            </div>
-
                         </div>
-
 
                         <a href="events.html" class="event-details-btn">
-                            View Event Details
-                            <span>→</span>
+                            View Event Details <span>→</span>
                         </a>
-
                     </div>
-
                 </article>
 
-
-
-                <!-- =================================================
-                     EVENT 3
-                     ================================================= -->
-
+                <!-- FEATURED EVENT 3: TECHTALKS -->
                 <article class="highlight-event">
-
                     <div class="highlight-gallery">
-
-                        <img
-                            class="main-event-image"
-                            src="assets/images/events/techtalks-1.jpg"
-                            alt="TechTalks 2026 event"
-                        >
-
-                        <button
-                            class="gallery-arrow gallery-prev"
-                            aria-label="Previous TechTalks image"
-                        >
-                            ‹
-                        </button>
-
-                        <button
-                            class="gallery-arrow gallery-next"
-                            aria-label="Next TechTalks image"
-                        >
-                            ›
-                        </button>
-
+                        <img class="main-event-image" src="assets/images/events/techtalks-1.jpg" alt="TechTalks 2026 Event" onerror="this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80';">
+                        <button type="button" class="gallery-arrow gallery-prev" aria-label="Previous image">‹</button>
+                        <button type="button" class="gallery-arrow gallery-next" aria-label="Next image">›</button>
 
                         <div class="event-thumbnails">
-
-                            <img
-                                src="assets/images/events/techtalks-1.jpg"
-                                class="active-thumb"
-                                alt="TechTalks image 1"
-                            >
-
-                            <img
-                                src="assets/images/events/techtalks-2.jpg"
-                                alt="TechTalks image 2"
-                            >
-
-                            <img
-                                src="assets/images/events/techtalks-3.jpg"
-                                alt="TechTalks image 3"
-                            >
-
-                            <img
-                                src="assets/images/events/techtalks-4.jpg"
-                                alt="TechTalks image 4"
-                            >
-
-                            <img
-                                src="assets/images/events/techtalks-5.jpg"
-                                alt="TechTalks image 5"
-                            >
-
+                            <img src="assets/images/events/techtalks-1.jpg" class="active-thumb" alt="TechTalks thumbnail 1" onerror="this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/techtalks-2.jpg" alt="TechTalks thumbnail 2" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/techtalks-3.jpg" alt="TechTalks thumbnail 3" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/techtalks-4.jpg" alt="TechTalks thumbnail 4" onerror="this.src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=200&q=80';">
+                            <img src="assets/images/events/techtalks-5.jpg" alt="TechTalks thumbnail 5" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=200&q=80';">
                         </div>
-
                     </div>
 
-
                     <div class="event-details">
-
-                        <span class="past-event">
-                            PAST EVENT
-                        </span>
-
-                        <h3>
-                            TechTalks 2026
-                        </h3>
-
+                        <span class="past-event">PAST EVENT</span>
+                        <h3>TechTalks 2026</h3>
                         <p class="event-description">
-                            Insightful sessions delivered by
-                            technology experts covering the
-                            latest trends and future of technology.
+                            Insightful sessions by industry experts on the latest trends and future of technology.
                         </p>
 
-
                         <div class="event-info-grid">
-
                             <div class="event-info">
-
-                                <span class="info-icon">▣</span>
-
+                                <span class="info-icon">📅</span>
                                 <div>
                                     <strong>13 Jul 2026</strong>
                                     <small>Monday</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">⌖</span>
-
+                                <span class="info-icon">📍</span>
                                 <div>
-                                    <strong>Auditorium</strong>
-                                    <small>Delhi · Offline Event</small>
+                                    <strong>Auditorium, Delhi</strong>
+                                    <small>Offline Event</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">♧</span>
-
+                                <span class="info-icon">🎙</span>
                                 <div>
                                     <strong>200+</strong>
                                     <small>Attendees</small>
                                 </div>
-
                             </div>
-
-
                             <div class="event-info">
-
-                                <span class="info-icon">◇</span>
-
-                                <div>
-                                    <strong>Workshop</strong>
-                                    <small>Category</small>
-                                </div>
-
-                            </div>
-
-
-                            <div class="event-info single-info">
-
-                                <span class="info-icon">₹</span>
-
+                                <span class="info-icon">🎟</span>
                                 <div>
                                     <strong>₹299</strong>
                                     <small>Entry Fee</small>
                                 </div>
-
                             </div>
-
                         </div>
 
-
                         <a href="events.html" class="event-details-btn">
-                            View Event Details
-                            <span>→</span>
+                            View Event Details <span>→</span>
                         </a>
-
                     </div>
-
                 </article>
 
             </div>
 
-
             <a href="events.html" class="view-events">
-                View All Events
-                <span>→</span>
+                View All Events <span>→</span>
             </a>
-
         </section>
-
-
 
         <!-- ================= CTA ================= -->
-
         <section class="cta">
-
             <div class="cta-container">
-
-                <div class="cta-icon">
-                    ♧
-                </div>
-
+                <div class="cta-icon">🚀</div>
                 <div class="cta-text">
-
-                    <h2>
-                        Ready for your next challenge?
-                    </h2>
-
-                    <p>
-                        Join exciting events, meet amazing people
-                        and build your future.
-                    </p>
-
+                    <h2>Ready for your next challenge?</h2>
+                    <p>Join exciting events, meet amazing people and build your future.</p>
                 </div>
-
                 <a href="registration.html" class="cta-button">
-                    Register Now
-                    <span>→</span>
+                    Register Now <span>→</span>
                 </a>
-
             </div>
-
         </section>
-
     </main>
 
-
-
     <!-- ================= FOOTER ================= -->
-
     <footer>
-
         <div class="footer-container">
-
-            <p>
-                © 2026 Techie-Tornadoes. All rights reserved.
-            </p>
-
+            <p>© <span data-current-year>2026</span> Techie-Tornadoes. All rights reserved.</p>
             <div class="footer-links">
-
                 <a href="#">About Us</a>
                 <a href="#">Contact</a>
                 <a href="#">Privacy Policy</a>
-
             </div>
-
             <div class="social-links">
-
-                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="Instagram">📸</a>
                 <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="GitHub">●</a>
-
+                <a href="#" aria-label="GitHub">🐙</a>
             </div>
-
         </div>
-
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

@@ -1,0 +1,218 @@
+/* =====================================================
+   TECHIE-TORNADOES
+   Dark Mode Theme Stylesheet
+   Activated via body.dark-mode or [data-theme="dark"]
+   ===================================================== */
+
+body.dark-mode,
+[data-theme="dark"] body {
+    --background: #07111e;
+    --white: #0d1929;
+    --navy: #f8fafc;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border: #1e2d42;
+    --border-subtle: #162436;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.6);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Navbar Dark Mode */
+body.dark-mode .navbar {
+    background: #0b1726;
+    border-bottom-color: #1e2d42;
+}
+
+body.dark-mode .brand {
+    color: #f8fafc;
+}
+
+body.dark-mode .nav-links a {
+    color: #cbd5e1;
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active {
+    color: var(--primary);
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #162538;
+    border-color: #283a54;
+    color: #fbbf24;
+}
+
+/* Hero Section Dark Mode */
+body.dark-mode .hero {
+    background: #07111e;
+}
+
+body.dark-mode .hero-text::after {
+    background: #07111e;
+}
+
+body.dark-mode .hero h1 {
+    color: #07111e;
+}
+
+body.dark-mode .eyebrow {
+    color: #07111e;
+}
+
+body.dark-mode .hero-description {
+    color: #0f172a;
+}
+
+body.dark-mode .secondary-btn {
+    border-color: #07111e;
+    color: #07111e;
+}
+
+/* Highlights Section Dark Mode */
+body.dark-mode .highlights {
+    background: #091524;
+}
+
+body.dark-mode .section-header h2 {
+    color: #f8fafc;
+}
+
+body.dark-mode .highlight-event {
+    background: #0f1d2e;
+    border-color: #1e2e45;
+}
+
+body.dark-mode .event-details {
+    background: #0f1d2e;
+}
+
+body.dark-mode .event-details h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .event-info strong {
+    color: #f8fafc;
+}
+
+body.dark-mode .past-event {
+    background: rgba(8, 217, 214, 0.15);
+    color: var(--primary);
+}
+
+/* Events Page Dark Mode */
+body.dark-mode .events-hero-text h1,
+body.dark-mode .events-eyebrow,
+body.dark-mode .events-hero-text p {
+    color: #07111e;
+}
+
+body.dark-mode .search-box,
+body.dark-mode .filter-select,
+body.dark-mode .category-filter {
+    background: #0f1d2e;
+    border-color: #1e2e45;
+    color: #e2e8f0;
+}
+
+body.dark-mode .search-box input {
+    color: #e2e8f0;
+}
+
+body.dark-mode .category-filter.active {
+    background: var(--primary);
+    color: #07111e;
+}
+
+body.dark-mode .event-row {
+    background: #0f1d2e;
+    border-color: #1e2e45;
+}
+
+body.dark-mode .event-main-info h2 {
+    color: #f8fafc;
+}
+
+body.dark-mode .event-details b {
+    color: #f8fafc;
+}
+
+body.dark-mode .event-extra-details {
+    background: #0a1422;
+    border-left-color: var(--primary);
+}
+
+body.dark-mode .no-events-state {
+    background: #0f1d2e;
+    border-color: #1e2e45;
+}
+
+body.dark-mode .no-events-state h3 {
+    color: #f8fafc;
+}
+
+/* Registration Page Dark Mode */
+body.dark-mode .registration-page {
+    background: #07111e;
+}
+
+body.dark-mode .intro-eyebrow,
+body.dark-mode .intro-content h1,
+body.dark-mode .intro-description {
+    color: #07111e;
+}
+
+body.dark-mode .stat-card {
+    background: rgba(7, 17, 30, 0.25);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .registration-form-section {
+    background: #07111e;
+}
+
+body.dark-mode .registration-card {
+    background: #0f1d2e;
+    border-color: #1e2e45;
+}
+
+body.dark-mode .form-heading h2 {
+    color: #f8fafc;
+}
+
+body.dark-mode .form-group label {
+    color: #f8fafc;
+}
+
+body.dark-mode .input-wrapper,
+body.dark-mode .form-group select,
+body.dark-mode .social-register button {
+    background: #152438;
+    border-color: #24364e;
+    color: #e2e8f0;
+}
+
+body.dark-mode .input-wrapper input {
+    color: #e2e8f0;
+}
+
+body.dark-mode .why-join {
+    background: #091524;
+}
+
+body.dark-mode .why-heading h2,
+body.dark-mode .benefit h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode footer {
+    background: #0b1726;
+    border-top-color: #1e2d42;
+}
+
+body.dark-mode .footer-container p,
+body.dark-mode .footer-links a,
+body.dark-mode .social-links a {
+    color: #94a3b8;
+}
