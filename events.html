@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Techie-Tornadoes| Events</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="registration.html">Register</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="events">
+
+            <h1>Explore Events</h1>
+
+            <p>
+               Explore a world of technical opportunities designed to challenge, inspire, and connect the next generation of innovators. From competitive coding and AI challenges to cybersecurity battles, web development sprints, cloud workshops, and data-driven competitions, discover events that match your interests and skills. Find your challenge, connect with like-minded students, and take the next step in your tech journey.
+            </p>
+
+            <div id="event-search">
+
+                <label for="searchInput">Search Events</label>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by event name..."
+                >
+
+            </div>
+
+            <div id="event-filter">
+
+                <label for="categoryFilter">Filter by Category</label>
+
+                <select id="categoryFilter">
+
+                    <option value="all">All Categories</option>
+                    <option value="coding">Coding</option>
+                    <option value="ai">AI / ML</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="web">Web Development</option>
+                    <option value="cloud">Cloud</option>
+                    <option value="data">Data Science</option>
+
+                </select>
+
+            </div>
+
+
+
+            <div id="eventContainer">
+
+            </div>
+
+            <p id="noEvents" hidden>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechFest Hub</p>
+    </footer>
+
+    <script src="js/events.js"></script>
+    <script src="js/search-filter.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
