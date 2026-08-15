@@ -544,6 +544,12 @@
 
     overflow: hidden;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8fafc;
+
     border-radius: 8px;
 }
 
@@ -551,7 +557,12 @@
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    /*
+       contain keeps the COMPLETE event poster visible.
+       It prevents cropping of the original artwork.
+    */
+    object-fit: contain;
+    object-position: center;
 
     border-radius: 8px;
 
@@ -561,56 +572,7 @@
 }
 
 .events-page .event-row:hover .event-image img {
-    transform: scale(1.06);
-}
-
-
-/* =========================================================
-   IMAGE ICON
-   ========================================================= */
-
-.events-page .event-image-icon {
-    width: 44px;
-    height: 44px;
-
-    position: absolute;
-
-    right: 10px;
-    bottom: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 3px solid #ffffff;
-
-    border-radius: 50%;
-
-    font-size: 16px;
-
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.18);
-
-    z-index: 3;
-
-    transition: var(--events-transition);
-}
-
-.events-page .event-row:hover .event-image-icon {
-    transform: scale(1.08);
-
-    box-shadow:
-        0 6px 16px rgba(0, 0, 0, 0.22);
-}
-
-.events-page .event-image-icon.blue {
-    background: #08d9d6;
-    color: #17202b;
-}
-
-.events-page .event-image-icon.pink {
-    background: #ff2e63;
-    color: #ffffff;
+    transform: scale(1.02);
 }
 
 
@@ -1134,12 +1096,12 @@
         width: 100%;
 
         height: 190px;
+
+        background: #f8fafc;
     }
 
-    .events-page .event-image-icon {
-        right: 14px;
-
-        bottom: 14px;
+    .events-page .event-image img {
+        object-fit: contain;
     }
 
 
@@ -1234,6 +1196,12 @@
 
     .events-page .event-image {
         height: 170px;
+
+        background: #f8fafc;
+    }
+
+    .events-page .event-image img {
+        object-fit: contain;
     }
 
     .events-page .event-main-info h2 {
@@ -1248,4 +1216,33 @@
         border-bottom:
             1px solid #e4e8ec;
     }
+}
+
+/* =========================================================
+   FINAL EVENT-PAGE OVERRIDES
+   - Hero diagonal uses the same teal
+   - Event posters are never cropped
+   - Circular event-image logos are not displayed
+   ========================================================= */
+
+.events-page .events-hero-image::before {
+    background: #08d9d6;
+}
+
+.events-page .event-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+}
+
+.events-page .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center;
+}
+
+.events-page .event-image-icon {
+    display: none !important;
 }
