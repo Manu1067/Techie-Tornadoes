@@ -77,17 +77,35 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.removeItem(REMEMBER_KEY);
         }
 
+        // Save session without password
+        if (window.TechieStorage && window.TechieStorage.setCurrentUser) {
+            window.TechieStorage.setCurrentUser(account);
+        }
+
+        // Update header state immediately
+        if (window.updateHeaderAuthState) {
+            window.updateHeaderAuthState();
+        }
+
         showSuccess(`Welcome back, ${account.fullName || "member"}! Redirecting to home...`);
 
         setTimeout(() => {
             window.location.href = "index.html";
-        }, 1500);
+        }, 1200);
     }
 
     function findAccountByEmail(email) {
         const cleanEmail = email.trim().toLowerCase();
-        let registrations = [];
 
+        // 1. Check Accounts list first
+        if (window.TechieStorage && window.TechieStorage.getAccounts) {
+            const accounts = window.TechieStorage.getAccounts();
+            const accMatch = accounts.find((a) => (a.email || "").trim().toLowerCase() === cleanEmail);
+            if (accMatch) return accMatch;
+        }
+
+        // 2. Check Registrations list
+        let registrations = [];
         if (window.TechieStorage && window.TechieStorage.getRegistrations) {
             registrations = window.TechieStorage.getRegistrations();
         } else {

@@ -224,6 +224,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (saveSuccess) {
+            // Save account
+            if (window.TechieStorage && window.TechieStorage.saveAccount) {
+                window.TechieStorage.saveAccount({
+                    fullName,
+                    email,
+                    phone: sanitizedPhone,
+                    college,
+                    year,
+                    branch,
+                    password
+                });
+            }
+
+            // Log in user session (without password)
+            if (window.TechieStorage && window.TechieStorage.setCurrentUser) {
+                window.TechieStorage.setCurrentUser({
+                    fullName,
+                    email,
+                    phone: sanitizedPhone,
+                    college,
+                    year,
+                    branch
+                });
+            }
+
+            // Update header state immediately
+            if (window.updateHeaderAuthState) {
+                window.updateHeaderAuthState();
+            }
+
             // Render rich success ticket
             showSuccessCard(registrationData);
             // Reset form

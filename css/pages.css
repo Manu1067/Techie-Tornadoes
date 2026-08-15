@@ -703,3 +703,325 @@
     transform: translateY(-1px);
 }
 
+/* =====================================================
+   PROFILE PAGE STYLING
+   ===================================================== */
+.profile-section {
+    padding: 60px 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.profile-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(7, 21, 37, 0.05);
+}
+
+.card-header-badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.user-big-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--navy);
+    font-size: 24px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(8, 217, 214, 0.3);
+}
+
+.user-header-meta h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 4px;
+}
+
+.badge-role {
+    display: inline-block;
+    padding: 3px 10px;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.info-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    word-break: break-word;
+}
+
+.profile-actions {
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.profile-logout-btn {
+    width: 100%;
+    padding: 12px;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.profile-logout-btn:hover {
+    background: #dc2626;
+    color: white;
+    border-color: #dc2626;
+}
+
+/* My Events Card */
+.section-title-wrap {
+    margin-bottom: 24px;
+}
+
+.section-title-wrap h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 6px;
+}
+
+.section-title-wrap p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.my-events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.my-event-card {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.my-event-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px rgba(8, 217, 214, 0.15);
+}
+
+.my-event-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.my-event-icon {
+    font-size: 28px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.my-event-category {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.my-event-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 2px 0 0;
+}
+
+.my-event-status {
+    margin-left: auto;
+    padding: 4px 12px;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 800;
+    font-size: 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.my-event-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    background: var(--white);
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.m-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.m-label {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.m-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.m-value.id-code {
+    font-family: monospace;
+    color: var(--primary-dark);
+}
+
+.my-events-empty {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f8fafc;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.my-events-empty h3 {
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 6px;
+}
+
+.my-events-empty p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Dark Mode Overrides for Profile Page */
+body.dark-mode .profile-card,
+[data-theme="dark"] .profile-card {
+    background: #0f1d2e !important;
+    border-color: #1e2e45 !important;
+}
+
+body.dark-mode .user-header-meta h2,
+body.dark-mode .info-value,
+body.dark-mode .section-title-wrap h2,
+body.dark-mode .my-event-title,
+body.dark-mode .m-value,
+body.dark-mode .my-events-empty h3,
+[data-theme="dark"] .user-header-meta h2,
+[data-theme="dark"] .info-value,
+[data-theme="dark"] .section-title-wrap h2,
+[data-theme="dark"] .my-event-title,
+[data-theme="dark"] .m-value,
+[data-theme="dark"] .my-events-empty h3 {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .info-label,
+body.dark-mode .section-title-wrap p,
+body.dark-mode .m-label,
+body.dark-mode .my-events-empty p,
+[data-theme="dark"] .info-label,
+[data-theme="dark"] .section-title-wrap p,
+[data-theme="dark"] .m-label,
+[data-theme="dark"] .my-events-empty p {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .my-event-card,
+body.dark-mode .my-events-empty,
+[data-theme="dark"] .my-event-card,
+[data-theme="dark"] .my-events-empty {
+    background: #0b1726 !important;
+    border-color: #1e2e45 !important;
+}
+
+body.dark-mode .my-event-details,
+body.dark-mode .my-event-icon,
+[data-theme="dark"] .my-event-details,
+[data-theme="dark"] .my-event-icon {
+    background: #0f1d2e !important;
+    border-color: #1e2e45 !important;
+}
+
+@media (max-width: 850px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .my-event-details {
+        grid-template-columns: 1fr;
+    }
+}
+

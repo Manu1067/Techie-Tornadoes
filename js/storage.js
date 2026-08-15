@@ -116,14 +116,120 @@ function generateRegistrationId() {
     return id;
 }
 
+const SESSION_KEY = "techieTornadoesUser";
+const ACCOUNTS_KEY = "techieTornadoesAccounts";
+
+/**
+ * Get currently logged-in user object from localStorage
+ * @returns {Object|null}
+ */
+function getCurrentUser() {
+    try {
+        const data = localStorage.getItem(SESSION_KEY);
+        return data ? JSON.parse(data) : null;
+    } catch (err) {
+        console.error("Error reading current user session:", err);
+        return null;
+    }
+}
+
+/**
+ * Save logged-in user session (excluding password)
+ * @param {Object} user 
+ */
+function setCurrentUser(user) {
+    try {
+        if (!user) {
+            clearCurrentUser();
+            return;
+        }
+        const safeUser = {
+            fullName: user.fullName || user.name || "User",
+            email: (user.email || "").trim().toLowerCase(),
+            phone: user.phone || "",
+            college: user.college || "",
+            year: user.year || "",
+            branch: user.branch || ""
+        };
+        localStorage.setItem(SESSION_KEY, JSON.stringify(safeUser));
+    } catch (err) {
+        console.error("Error setting current user session:", err);
+    }
+}
+
+/**
+ * Clear logged-in user session
+ */
+function clearCurrentUser() {
+    try {
+        localStorage.removeItem(SESSION_KEY);
+    } catch (err) {
+        console.error("Error clearing current user session:", err);
+    }
+}
+
+/**
+ * Get all registered user accounts
+ * @returns {Array}
+ */
+function getAccounts() {
+    try {
+        const data = localStorage.getItem(ACCOUNTS_KEY);
+        return data ? JSON.parse(data) : [];
+    } catch (err) {
+        return [];
+    }
+}
+
+/**
+ * Save or update user account
+ * @param {Object} account 
+ */
+function saveAccount(account) {
+    try {
+        const accounts = getAccounts();
+        const cleanEmail = (account.email || "").trim().toLowerCase();
+        const index = accounts.findIndex((a) => (a.email || "").trim().toLowerCase() === cleanEmail);
+        
+        const accountData = {
+            fullName: account.fullName || account.name || "",
+            email: cleanEmail,
+            phone: account.phone || "",
+            college: account.college || "",
+            year: account.year || "",
+            branch: account.branch || "",
+            password: account.password || ""
+        };
+
+        if (index >= 0) {
+            accounts[index] = { ...accounts[index], ...accountData };
+        } else {
+            accounts.push(accountData);
+        }
+
+        localStorage.setItem(ACCOUNTS_KEY, JSON.stringify(accounts));
+        return accountData;
+    } catch (err) {
+        console.error("Error saving account:", err);
+        return null;
+    }
+}
+
 // Expose globally for modular usage
 window.TechieStorage = {
     STORAGE_KEY,
+    SESSION_KEY,
+    ACCOUNTS_KEY,
     getRegistrations,
     saveRegistration,
     isDuplicateRegistration,
     isDuplicateEmail,
     getRegistrationsByEmail,
     getRegistrationById,
-    generateRegistrationId
+    generateRegistrationId,
+    getCurrentUser,
+    setCurrentUser,
+    clearCurrentUser,
+    getAccounts,
+    saveAccount
 };

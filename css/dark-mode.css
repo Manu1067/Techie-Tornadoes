@@ -1077,3 +1077,50 @@ body.dark-mode .contact-card p,
 [data-theme="dark"] .contact-card p {
     color: #cbd5e1 !important;
 }
+
+/* =====================================================
+   PROFILE DROPDOWN DARK MODE
+   ===================================================== */
+body.dark-mode .profile-dropdown-menu,
+[data-theme="dark"] .profile-dropdown-menu {
+    background: #0f1d2e !important;
+    border-color: #1e2e45 !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .user-display-name,
+[data-theme="dark"] .user-display-name {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .user-display-email,
+[data-theme="dark"] .user-display-email {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .profile-dropdown-divider,
+[data-theme="dark"] .profile-dropdown-divider {
+    background: #1e2e45 !important;
+}
+
+body.dark-mode .profile-dropdown-item,
+[data-theme="dark"] .profile-dropdown-item {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .profile-dropdown-item:hover,
+[data-theme="dark"] .profile-dropdown-item:hover {
+    background: #172a40 !important;
+    color: var(--primary) !important;
+}
+
+body.dark-mode .profile-dropdown-item.logout-item,
+[data-theme="dark"] .profile-dropdown-item.logout-item {
+    color: #f87171 !important;
+}
+
+body.dark-mode .profile-dropdown-item.logout-item:hover,
+[data-theme="dark"] .profile-dropdown-item.logout-item:hover {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #fca5a5 !important;
+}

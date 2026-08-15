@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeImageHandling();
     updateCurrentYear();
     initializeToast();
+    updateHeaderAuthState();
 });
 
 // =====================================================
@@ -333,9 +334,147 @@ function initializeSocialButtons() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Techie-Tornadoes initialized.");
+// =====================================================
+// 11. POST-LOGIN PROFILE HEADER & DROPDOWN CONTROLLER
+// =====================================================
+function updateHeaderAuthState() {
+    const navRightActions = document.querySelector(".nav-right-actions");
+    if (!navRightActions) return;
 
+    const user = window.TechieStorage ? window.TechieStorage.getCurrentUser() : null;
+
+    if (user) {
+        const userName = user.fullName || user.name || "User";
+        const firstName = userName.split(" ")[0];
+
+        // Create or locate profile wrapper
+        let wrapper = navRightActions.querySelector(".profile-btn-wrapper");
+        if (!wrapper) {
+            wrapper = document.createElement("div");
+            wrapper.className = "profile-btn-wrapper";
+
+            const oldLoginBtn = navRightActions.querySelector(".login-btn");
+            if (oldLoginBtn) oldLoginBtn.remove();
+
+            const toggleBtn = navRightActions.querySelector(".mobile-menu-toggle");
+            if (toggleBtn) {
+                navRightActions.insertBefore(wrapper, toggleBtn);
+            } else {
+                navRightActions.appendChild(wrapper);
+            }
+        }
+
+        wrapper.innerHTML = `
+            <button type="button" class="profile-btn" id="userProfileBtn" aria-expanded="false" aria-haspopup="true">
+                <span class="profile-icon">👤</span>
+                <span class="profile-name">${firstName}</span>
+                <span class="profile-caret">▼</span>
+            </button>
+            <div class="profile-dropdown-menu" id="profileDropdown" hidden>
+                <div class="profile-dropdown-header">
+                    <div class="user-avatar-badge">${firstName.charAt(0).toUpperCase()}</div>
+                    <div class="user-info-text">
+                        <strong class="user-display-name">${userName}</strong>
+                        <span class="user-display-email">${user.email || ""}</span>
+                    </div>
+                </div>
+                <div class="profile-dropdown-divider"></div>
+                <a href="profile.html" class="profile-dropdown-item">
+                    <span class="item-icon">👤</span> My Profile
+                </a>
+                <a href="profile.html#my-events" class="profile-dropdown-item">
+                    <span class="item-icon">🎟️</span> My Events
+                </a>
+                <div class="profile-dropdown-divider"></div>
+                <button type="button" class="profile-dropdown-item logout-item" id="logoutBtn">
+                    <span class="item-icon">🚪</span> Logout
+                </button>
+            </div>
+        `;
+
+        const profileBtn = wrapper.querySelector("#userProfileBtn");
+        const dropdown = wrapper.querySelector("#profileDropdown");
+        const logoutBtn = wrapper.querySelector("#logoutBtn");
+
+        if (profileBtn && dropdown) {
+            profileBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const isOpen = dropdown.classList.contains("is-open");
+                if (isOpen) {
+                    closeDropdown();
+                } else {
+                    openDropdown();
+                }
+            });
+
+            function openDropdown() {
+                dropdown.hidden = false;
+                void dropdown.offsetHeight;
+                dropdown.classList.add("is-open");
+                profileBtn.setAttribute("aria-expanded", "true");
+            }
+
+            function closeDropdown() {
+                dropdown.classList.remove("is-open");
+                profileBtn.setAttribute("aria-expanded", "false");
+                setTimeout(() => {
+                    if (!dropdown.classList.contains("is-open")) {
+                        dropdown.hidden = true;
+                    }
+                }, 200);
+            }
+
+            document.addEventListener("click", (e) => {
+                if (!wrapper.contains(e.target)) {
+                    closeDropdown();
+                }
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") closeDropdown();
+            });
+        }
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (window.TechieStorage && window.TechieStorage.clearCurrentUser) {
+                    window.TechieStorage.clearCurrentUser();
+                }
+                if (window.showTechieToast) {
+                    window.showTechieToast("Logged out successfully");
+                }
+                updateHeaderAuthState();
+                if (window.location.pathname.includes("profile.html")) {
+                    window.location.href = "index.html";
+                }
+            });
+        }
+
+    } else {
+        // Not logged in -> restore Login / Sign Up button
+        const wrapper = navRightActions.querySelector(".profile-btn-wrapper");
+        if (wrapper) wrapper.remove();
+
+        if (!navRightActions.querySelector(".login-btn")) {
+            const loginBtn = document.createElement("a");
+            loginBtn.href = "login.html";
+            loginBtn.className = "login-btn";
+            loginBtn.innerHTML = `<span>👤</span> Login / Sign Up`;
+
+            const toggleBtn = navRightActions.querySelector(".mobile-menu-toggle");
+            if (toggleBtn) {
+                navRightActions.insertBefore(loginBtn, toggleBtn);
+            } else {
+                navRightActions.appendChild(loginBtn);
+            }
+        }
+    }
+}
+
+window.updateHeaderAuthState = updateHeaderAuthState;
+
+document.addEventListener("DOMContentLoaded", () => {
     initializeNavigation();
     initializeMobileMenu();
     initializeNavbarScrollEffect();
@@ -346,4 +485,5 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCurrentYear();
     initializeToast();
     initializeSocialButtons();
+    updateHeaderAuthState();
 });
