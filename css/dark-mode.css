@@ -69,44 +69,33 @@ body.dark-mode .login-btn:hover {
 
 
 /* =====================================================
-   HERO SECTION
+   HERO SECTION (Kept identical in Light & Dark Mode)
    ===================================================== */
 
 body.dark-mode .hero {
-    background: #07111e;
+    background: #f4fbfc;
 }
 
-body.dark-mode .hero-text::after {
-    background: #07111e;
+body.dark-mode .hero-text {
+    background: linear-gradient(110deg, #08d9d6 0%, #06c3c0 100%) !important;
 }
-
-
-/* Main hero heading */
 
 body.dark-mode .hero h1 {
-    color: #f8fafc;
+    color: var(--navy) !important;
 }
 
-
-/* Highlighted word inside heading */
-
-body.dark-mode .hero h1 span {
-    color: var(--primary);
+body.dark-mode .hero h1 span.turquoise {
+    color: #ffffff !important;
 }
-
-
-/* Small heading above hero */
 
 body.dark-mode .eyebrow {
-    color: #07111e;
+    color: var(--navy) !important;
 }
-
-
-/* Hero description */
 
 body.dark-mode .hero-description {
-    color: #e2e8f0;
+    color: #1e293b !important;
 }
+
 
 
 /* =====================================================
@@ -229,33 +218,26 @@ body.dark-mode .past-event {
 
 
 /* =====================================================
-   EVENTS PAGE HERO
+   EVENTS PAGE HERO (Kept identical in Light & Dark Mode)
    ===================================================== */
 
 body.dark-mode .events-hero {
-    background: #07111e;
+    background: linear-gradient(115deg, #08d9d6 0%, #06c6c4 55%, #05b8b6 100%) !important;
 }
 
 body.dark-mode .events-hero-text h1 {
-    color: #f8fafc;
+    color: #17202b !important;
 }
 
 body.dark-mode .events-eyebrow {
-    color: var(--primary);
-    background: rgba(8, 217, 214, 0.12);
+    color: #17202b !important;
+    background: rgba(23, 32, 43, 0.08) !important;
 }
 
 body.dark-mode .events-hero-text p {
-    color: #cbd5e1;
+    color: #1c2a38 !important;
 }
 
-body.dark-mode .events-hero::after {
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--background)
-    );
-}
 
 
 /* =====================================================
