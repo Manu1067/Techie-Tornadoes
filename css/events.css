@@ -48,7 +48,7 @@
     pointer-events: none;
 }
 
-.events-page .events-hero::after {
+/* .events-page .events-hero::after {
     content: "";
 
     position: absolute;
@@ -61,7 +61,7 @@
 
     pointer-events: none;
     z-index: 3;
-}
+} */
 
 .events-page .events-hero-content {
     max-width: 1500px;
