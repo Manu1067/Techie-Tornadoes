@@ -401,21 +401,19 @@
     box-shadow: 0 4px 12px rgba(60, 64, 67, 0.15);
     transform: translateY(-1px);
 }
-
 .social-register .btn-linkedin {
-    background: #0a66c2;
-    border: 1px solid #0a66c2;
-    color: #ffffff;
-    box-shadow: 0 2px 6px rgba(10, 102, 194, 0.25);
+    background: #e8f3fc;
+    border: 1px solid #b8dcf5;
+    color: #0a66c2;
+    box-shadow: 0 1px 3px rgba(10, 102, 194, 0.1);
 }
 
 .social-register .btn-linkedin:hover {
-    background: #084e96;
-    border-color: #084e96;
-    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.35);
+    background: #d5eafa;
+    border-color: #0a66c2;
+    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.2);
     transform: translateY(-1px);
 }
-
 .social-register .btn-github {
     background: #24292e;
     border: 1px solid #24292e;
