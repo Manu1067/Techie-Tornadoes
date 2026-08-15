@@ -432,27 +432,23 @@
 
 .events-page .category-filter:hover {
     border-color: var(--events-teal);
-
     color: var(--events-teal-dark);
-
-    transform: translateY(-1px);
-
-    box-shadow: 0 4px 12px rgba(8, 217, 214, 0.15);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 16px rgba(8, 217, 214, 0.2);
 }
 
 .events-page .category-filter.active {
     background: linear-gradient(135deg, #08d9d6 0%, #06c6c4 100%);
-
     border-color: transparent;
-
     color: var(--events-navy);
-
-    box-shadow: 0 4px 16px rgba(8, 217, 214, 0.35);
+    box-shadow: 0 6px 20px rgba(8, 217, 214, 0.4);
+    animation: popBounce 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .events-page .category-filter.active span {
     color: var(--events-navy);
 }
+
 
 
 /* =========================================================
@@ -525,16 +521,15 @@
 }
 
 .events-page .event-row:hover {
-    transform: translateY(-3px);
-
-    border-color: #b8eeee;
-
-    box-shadow: var(--events-shadow-hover);
+    transform: translateY(-4px) scale(1.004);
+    border-color: var(--events-teal);
+    box-shadow: 0 12px 32px rgba(8, 217, 214, 0.18), 0 4px 14px rgba(7, 21, 37, 0.08);
 }
 
 .events-page .event-row:hover::before {
     opacity: 1;
 }
+
 
 
 /* =========================================================

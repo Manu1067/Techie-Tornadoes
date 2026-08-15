@@ -33,8 +33,32 @@
     --shadow-sm: 0 2px 8px rgba(7, 21, 37, 0.04);
     --shadow: 0 8px 25px rgba(7, 21, 37, 0.08);
     --shadow-hover: 0 16px 35px rgba(7, 21, 37, 0.12);
+    --shadow-glow: 0 10px 30px rgba(8, 217, 214, 0.25);
 
     --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================= KEYFRAME ANIMATIONS ================= */
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseCyanGlow {
+    0% { box-shadow: 0 0 0 0 rgba(8, 217, 214, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(8, 217, 214, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(8, 217, 214, 0); }
+}
+
+@keyframes popBounce {
+    0% { transform: scale(0.94); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shimmerSheen {
+    0% { transform: translateX(-150%) skewX(-20deg); }
+    100% { transform: translateX(250%) skewX(-20deg); }
 }
 
 /* ================= RESET ================= */
@@ -57,6 +81,7 @@ body {
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 a {
     text-decoration: none;
