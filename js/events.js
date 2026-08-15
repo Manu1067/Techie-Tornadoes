@@ -14,7 +14,7 @@ const eventsData = [
         monthYear: "June 2026",
         location: "Online",
         isOnline: true,
-        image: "assets/images/events/codesprint.jpg",
+        image: "images/codesprint.png",
         icon: "</>",
         badgeColor: "blue",
         description: "Showcase your programming skills in this thrilling coding competition. Solve real-world algorithmic problems and compete with the best minds under pressure.",
@@ -35,7 +35,7 @@ const eventsData = [
         monthYear: "June 2026",
         location: "Tech Campus, Pune",
         isOnline: false,
-        image: "assets/images/events/robowars.jpg",
+        image: "images/robowars.png",
         icon: "🤖",
         badgeColor: "blue",
         description: "Design, build and battle your robot in the ultimate robotics showdown. Outsmart your opponents in exciting tactical engineering challenges.",
@@ -56,7 +56,7 @@ const eventsData = [
         monthYear: "June 2026",
         location: "Online",
         isOnline: true,
-        image: "assets/images/events/cybershield.jpg",
+        image: "images/cybershield.png",
         icon: "🛡",
         badgeColor: "blue",
         description: "Put your cybersecurity knowledge to the test. Capture the flag (CTF), ethical hacking, cryptography, and digital forensics challenges await!",
@@ -77,7 +77,7 @@ const eventsData = [
         monthYear: "July 2026",
         location: "Innovation Hub",
         isOnline: false,
-        image: "assets/images/events/innovatex.jpg",
+        image: "images/innovatex.png",
         icon: "💡",
         badgeColor: "pink",
         description: "Bring your ideas to life! Present your innovative solutions to real-world social and industrial problems and make a lasting impact.",
@@ -98,7 +98,7 @@ const eventsData = [
         monthYear: "July 2026",
         location: "Auditorium, Delhi",
         isOnline: false,
-        image: "assets/images/events/techtalks.jpg",
+        image: "images/techtalks.png",
         icon: "🎙",
         badgeColor: "pink",
         description: "Insightful keynote sessions and hands-on workshops delivered by technology experts covering AI trends, web architecture, and future careers.",
@@ -119,7 +119,7 @@ const eventsData = [
         monthYear: "July 2026",
         location: "Online",
         isOnline: true,
-        image: "assets/images/events/cloudcraft.jpg",
+        image: "images/cloudcraft.png",
         icon: "☁",
         badgeColor: "blue",
         description: "Build cloud-powered solutions and explore modern serverless, DevOps, and cloud infrastructure through practical real-time challenges.",
@@ -129,6 +129,48 @@ const eventsData = [
         duration: "6 Hours",
         prizePool: "₹45,000",
         participants: "90+ Builders"
+    },
+    {
+        id: 7,
+        slug: "ainexus",
+        name: "AI Nexus 2026",
+        category: "ai",
+        categoryName: "AI & ML",
+        date: "27 Jul 2026",
+        monthYear: "July 2026",
+        location: "Online / Hybrid",
+        isOnline: true,
+        image: "images/ainexus.png",
+        icon: "🧠",
+        badgeColor: "pink",
+        description: "Develop cutting-edge artificial intelligence and deep learning models to tackle complex computer vision and generative AI challenges.",
+        detailedDescription: "AI Nexus invites researchers and AI engineers to build practical machine learning pipelines, fine-tune LLMs, and deploy neural network architectures with GPU cloud credits provided.",
+        teamSize: "1 - 4 Members",
+        registrationDeadline: "24 Jul 2026",
+        duration: "24 Hours",
+        prizePool: "₹80,000",
+        participants: "110+ Builders"
+    },
+    {
+        id: 8,
+        slug: "iotforge",
+        name: "IoT Forge 2026",
+        category: "iot",
+        categoryName: "IoT & Hardware",
+        date: "03 Aug 2026",
+        monthYear: "August 2026",
+        location: "Hardware Lab, Bengaluru",
+        isOnline: false,
+        image: "images/iotforge.png",
+        icon: "⚡",
+        badgeColor: "blue",
+        description: "Engineer smart connected devices, sensor networks, and edge computing solutions for smart cities and automated industrial systems.",
+        detailedDescription: "IoT Forge provides access to microcontrollers, sensors, and wireless connectivity kits. Teams design embedded firmware, interface telemetry dashboards, and prototype connected hardware solutions.",
+        teamSize: "2 - 4 Members",
+        registrationDeadline: "31 Jul 2026",
+        duration: "2 Days",
+        prizePool: "₹65,000",
+        participants: "60+ Teams"
     }
 ];
 
@@ -147,7 +189,7 @@ function createEventRowMarkup(event) {
         <article class="event-row" data-event-id="${event.id}" data-category="${event.category}" data-name="${event.name.toLowerCase()}">
             <!-- EVENT IMAGE & ICON -->
             <div class="event-image">
-                <img src="${event.image}" alt="${event.name}" onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80';">
+                <img src="${event.image}" alt="${event.name}" onerror="this.onerror=null; this.src='images/event.png';">
                 <div class="event-image-icon ${iconClass}">
                     ${event.icon}
                 </div>

@@ -26,7 +26,7 @@ function getRegistrations() {
  */
 function saveRegistration(registration) {
     try {
-        // Ensure security requirement: remove any accidental password field
+        // Ensure security requirement: strictly remove password fields
         const safeRegistration = { ...registration };
         delete safeRegistration.password;
         delete safeRegistration.confirmPassword;
@@ -42,9 +42,28 @@ function saveRegistration(registration) {
 }
 
 /**
- * Check if an email has already been registered
+ * Check if a candidate is already registered for a SPECIFIC event
  * @param {string} email Email address to check
- * @returns {boolean} True if email already exists
+ * @param {string} eventName Event title to check
+ * @returns {boolean} True if already registered for this event
+ */
+function isDuplicateRegistration(email, eventName) {
+    if (!email || !eventName) return false;
+    const registrations = getRegistrations();
+    const cleanEmail = email.trim().toLowerCase();
+    const cleanEvent = eventName.trim().toLowerCase();
+
+    return registrations.some((item) => {
+        const itemEmail = (item.email || "").trim().toLowerCase();
+        const itemEvent = (item.event || "").trim().toLowerCase();
+        return itemEmail === cleanEmail && itemEvent === cleanEvent;
+    });
+}
+
+/**
+ * Check if an email has already been registered in the system
+ * @param {string} email Email address to check
+ * @returns {boolean} True if email exists in any record
  */
 function isDuplicateEmail(email) {
     if (!email) return false;
@@ -55,12 +74,38 @@ function isDuplicateEmail(email) {
 }
 
 /**
+ * Get all registrations associated with a specific email
+ * @param {string} email 
+ * @returns {Array} Matching registrations
+ */
+function getRegistrationsByEmail(email) {
+    if (!email) return [];
+    const registrations = getRegistrations();
+    const cleanEmail = email.trim().toLowerCase();
+    return registrations.filter(
+        (item) => item.email && item.email.trim().toLowerCase() === cleanEmail
+    );
+}
+
+/**
+ * Find registration record by Registration ID
+ * @param {string} id 
+ * @returns {Object|null}
+ */
+function getRegistrationById(id) {
+    if (!id) return null;
+    const registrations = getRegistrations();
+    const cleanId = id.trim().toUpperCase();
+    return registrations.find((item) => (item.id || "").toUpperCase() === cleanId) || null;
+}
+
+/**
  * Generate a unique registration ID formatted as TT-2026-XXXX
  * @returns {string} Unique Registration ID
  */
 function generateRegistrationId() {
     const registrations = getRegistrations();
-    const existingIds = new Set(registrations.map((r) => r.id));
+    const existingIds = new Set(registrations.map((r) => (r.id || "").toUpperCase()));
 
     let id;
     let attempts = 0;
@@ -78,6 +123,9 @@ window.TechieStorage = {
     STORAGE_KEY,
     getRegistrations,
     saveRegistration,
+    isDuplicateRegistration,
     isDuplicateEmail,
+    getRegistrationsByEmail,
+    getRegistrationById,
     generateRegistrationId
 };

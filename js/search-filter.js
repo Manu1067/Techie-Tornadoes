@@ -107,9 +107,12 @@ function initializeSearchAndFilters() {
             chipButtons.forEach((c) => c.classList.remove("active"));
             chip.classList.add("active");
 
+            const chipDataCat = chip.getAttribute("data-category");
             const chipText = chip.textContent.trim().toLowerCase();
 
-            if (chipText.includes("all events")) {
+            if (chipDataCat) {
+                currentCategory = chipDataCat.toLowerCase();
+            } else if (chipText.includes("all events")) {
                 currentCategory = "all";
             } else if (chipText.includes("coding")) {
                 currentCategory = "coding";
@@ -123,6 +126,10 @@ function initializeSearchAndFilters() {
                 currentCategory = "workshop";
             } else if (chipText.includes("cloud")) {
                 currentCategory = "cloud";
+            } else if (chipText.includes("ai") || chipText.includes("intelligence")) {
+                currentCategory = "ai";
+            } else if (chipText.includes("iot") || chipText.includes("hardware")) {
+                currentCategory = "iot";
             } else {
                 currentCategory = chipText;
             }
@@ -130,7 +137,10 @@ function initializeSearchAndFilters() {
             // Sync with select dropdown if present
             if (categorySelect) {
                 const options = Array.from(categorySelect.options);
-                const matchingOpt = options.find((opt) => opt.text.toLowerCase().includes(currentCategory));
+                const matchingOpt = options.find((opt) => 
+                    opt.value.toLowerCase() === currentCategory ||
+                    opt.text.toLowerCase().includes(currentCategory)
+                );
                 if (matchingOpt) {
                     categorySelect.value = matchingOpt.value;
                 } else if (currentCategory === "all") {
@@ -144,11 +154,14 @@ function initializeSearchAndFilters() {
 
     function syncChipActiveState(categorySlug) {
         chipButtons.forEach((chip) => {
+            const chipDataCat = (chip.getAttribute("data-category") || "").toLowerCase();
             const chipText = chip.textContent.trim().toLowerCase();
             let isMatch = false;
 
             if (categorySlug === "all" || categorySlug === "") {
-                isMatch = chipText.includes("all events");
+                isMatch = chipDataCat === "all" || chipText.includes("all events");
+            } else if (chipDataCat) {
+                isMatch = chipDataCat === categorySlug;
             } else {
                 isMatch = chipText.includes(categorySlug.replace("cybersecurity", "cyber"));
             }

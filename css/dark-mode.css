@@ -571,6 +571,97 @@ body.dark-mode .social-links a:hover {
     color: var(--primary);
 }
 
+/* =====================================================
+   REGISTRATION RECEIPT & MODAL (DARK MODE)
+   ===================================================== */
+body.dark-mode .registration-success-badge {
+    background: #0f1d2e;
+    border-color: #10b981;
+    color: #e2e8f0;
+}
+
+body.dark-mode .badge-header {
+    border-bottom-color: #1e2e45;
+}
+
+body.dark-mode .badge-header h3 {
+    color: #34d399;
+}
+
+body.dark-mode .badge-header p {
+    color: #94a3b8;
+}
+
+body.dark-mode .ticket-details {
+    background: #152438;
+}
+
+body.dark-mode .t-label {
+    color: #94a3b8;
+}
+
+body.dark-mode .t-value {
+    color: #f8fafc;
+}
+
+body.dark-mode .t-value.event-name {
+    color: var(--primary);
+}
+
+body.dark-mode .action-btn.print-btn {
+    background: #1e2e45;
+    border-color: #24364e;
+    color: #e2e8f0;
+}
+
+body.dark-mode .action-btn.print-btn:hover {
+    background: #24364e;
+}
+
+body.dark-mode .lookup-modal-dialog {
+    background: #0f1d2e;
+    border: 1px solid #1e2e45;
+}
+
+body.dark-mode .lookup-close-btn {
+    color: #94a3b8;
+}
+
+body.dark-mode .lookup-close-btn:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .lookup-modal-body p {
+    color: #94a3b8;
+}
+
+body.dark-mode .lookup-search-box input {
+    background: #152438;
+    border-color: #24364e;
+    color: #e2e8f0;
+}
+
+body.dark-mode .lookup-empty {
+    background: #152438;
+    color: #94a3b8;
+}
+
+body.dark-mode .lookup-item-card {
+    background: #152438;
+    border-color: #24364e;
+}
+
+body.dark-mode .lookup-item-card .l-name {
+    color: #f8fafc;
+}
+
+body.dark-mode .lookup-item-card .l-event {
+    color: var(--primary);
+}
+
+body.dark-mode .lookup-item-card .l-meta {
+    color: #94a3b8;
+}
 
 /* =====================================================
    GENERAL BUTTON TRANSITIONS
