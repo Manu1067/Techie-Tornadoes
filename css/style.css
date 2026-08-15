@@ -219,25 +219,25 @@ button, input, select, textarea {
 }
 
 .hero-content {
+    position: relative;
     min-height: 450px;
-    display: grid;
-    grid-template-columns: 50% 50%;
     max-width: 1500px;
     margin: 0 auto;
-    gap: 0;
+    overflow: hidden;
 }
 
 .hero-text {
-    padding: 70px 40px 70px max(40px, calc((100vw - 1380px) / 2));
+    position: relative;
+    width: 58%;
+    min-height: 450px;
+    padding: 70px 60px 70px max(40px, calc((100vw - 1380px) / 2));
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: linear-gradient(110deg, #08d9d6 0%, #06c3c0 100%);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
 }
-
 .eyebrow {
     color: var(--navy);
     font-size: 13px;
@@ -319,12 +319,14 @@ button, input, select, textarea {
     background: rgba(7, 21, 37, 0.08);
     transform: translateY(-2px);
 }
-
 .hero-image {
-    height: 450px;
-    overflow: hidden;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .hero-image img {
@@ -338,7 +340,6 @@ button, input, select, textarea {
 .hero-image:hover img {
     transform: scale(1.03);
 }
-
 /* ================= EVENT HIGHLIGHTS ================= */
 .highlights {
     padding: 70px 5% 80px;
