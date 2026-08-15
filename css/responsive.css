@@ -102,6 +102,7 @@
    MOBILE (768px)
    ===================================================== */
 @media (max-width: 768px) {
+
     /* Navbar Mobile Menu */
     .mobile-menu-toggle {
         display: flex;
@@ -340,6 +341,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
