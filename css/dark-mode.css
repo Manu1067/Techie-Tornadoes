@@ -832,43 +832,80 @@ body.dark-mode .events-page .event-location {
     color: #cbd5e1 !important;
 }
 
-/* Information labels:
-   Team Size, Deadline, Duration, Prize Pool */
+/* =========================================================
+   EVENTS - DARK MODE
+   FIX TEAM SIZE / DEADLINE / DURATION / PRIZE VISIBILITY
+   ========================================================= */
+
+/* Entire event information section */
+body.dark-mode .events-page .event-info-grid,
+body.dark-mode .events-page .event-info-row,
 body.dark-mode .events-page .event-info,
-body.dark-mode .events-page .event-info span,
-body.dark-mode .events-page .event-info small,
-body.dark-mode .events-page .event-info-label {
+body.dark-mode .events-page .event-stats,
+body.dark-mode .events-page .event-stat {
+    color: #f8fafc !important;
+}
+
+/* Every text element inside the information boxes */
+body.dark-mode .events-page .event-info-grid *,
+body.dark-mode .events-page .event-info-row *,
+body.dark-mode .events-page .event-info *,
+body.dark-mode .events-page .event-stats *,
+body.dark-mode .events-page .event-stat * {
+    color: #f8fafc !important;
+}
+
+/* Labels such as Team Size / Deadline / Duration / Prize Pool */
+body.dark-mode .events-page .event-info-grid label,
+body.dark-mode .events-page .event-info-grid small,
+body.dark-mode .events-page .event-info-grid span:first-child,
+body.dark-mode .events-page .event-stat label,
+body.dark-mode .events-page .event-stat small {
     color: #94a3b8 !important;
 }
 
-/* Information values:
-   1 - 3 Members, dates, duration, prize */
-body.dark-mode .events-page .event-info strong,
-body.dark-mode .events-page .event-info b,
-body.dark-mode .events-page .event-info-value {
-    color: #f1f5f9 !important;
+/* Actual values */
+body.dark-mode .events-page .event-info-grid strong,
+body.dark-mode .events-page .event-info-grid b,
+body.dark-mode .events-page .event-stat strong,
+body.dark-mode .events-page .event-stat b {
+    color: #f8fafc !important;
+    opacity: 1 !important;
+}
+
+/* Event description */
+body.dark-mode .events-page .event-description,
+body.dark-mode .events-page .event-description p {
+    color: #cbd5e1 !important;
+}
+
+/* Date and location */
+body.dark-mode .events-page .event-meta,
+body.dark-mode .events-page .event-meta * {
+    color: #cbd5e1 !important;
+    opacity: 1 !important;
+}
+
+/* Event title */
+body.dark-mode .events-page .event-title,
+body.dark-mode .events-page .event-title * {
+    color: #f8fafc !important;
 }
 
 /* Category badge */
 body.dark-mode .events-page .event-category {
-    color: #073b3a !important;
+    color: #063c3d !important;
     background: #c8f5f4 !important;
 }
 
-/* View Details button */
+/* View Details */
 body.dark-mode .events-page .view-details-btn {
     color: #08d9d6 !important;
-    background: transparent !important;
     border-color: #08d9d6 !important;
+    background: transparent !important;
 }
 
-/* View Details hover */
-body.dark-mode .events-page .view-details-btn:hover {
-    color: #ffffff !important;
-    background: #08d9d6 !important;
-}
-
-/* Register button */
+/* Register */
 body.dark-mode .events-page .direct-register-btn {
     color: #06202b !important;
     background: linear-gradient(
@@ -876,34 +913,22 @@ body.dark-mode .events-page .direct-register-btn {
         #08d9d6 0%,
         #06b8b6 100%
     ) !important;
-    border: none !important;
-}
-
-/* Register button hover */
-body.dark-mode .events-page .direct-register-btn:hover {
-    color: #ffffff !important;
-    background: linear-gradient(
-        135deg,
-        #05aaa8 0%,
-        #049694 100%
-    ) !important;
-}
-
-/* Event information boxes */
-body.dark-mode .events-page .event-info-grid,
-body.dark-mode .events-page .event-info {
-    border-color: #243b53 !important;
-}
-
-/* Make event icons visible */
-body.dark-mode .events-page .event-info svg,
-body.dark-mode .events-page .event-info i,
-body.dark-mode .events-page .event-meta svg,
-body.dark-mode .events-page .event-meta i {
     opacity: 1 !important;
 }
 
-/* Prevent disabled-looking text */
-body.dark-mode .events-page .event-row * {
-    text-shadow: none;
+/* Information box backgrounds */
+body.dark-mode .events-page .event-info-grid > *,
+body.dark-mode .events-page .event-info-row > *,
+body.dark-mode .events-page .event-stats > *,
+body.dark-mode .events-page .event-stat {
+    background-color: rgba(8, 217, 214, 0.06) !important;
+    opacity: 1 !important;
+}
+
+/* Make icons visible */
+body.dark-mode .events-page .event-info-grid svg,
+body.dark-mode .events-page .event-info-grid i,
+body.dark-mode .events-page .event-stat svg,
+body.dark-mode .events-page .event-stat i {
+    opacity: 1 !important;
 }
