@@ -180,11 +180,11 @@
         </section>
 
         <!-- NO EVENTS FALLBACK STATE -->
-        <div id="noEvents" class="no-events-state" hidden>
+        <div id="noEvents" class="no-events-state no-events-message" hidden style="display: none;">
             <div class="no-events-icon">🔍</div>
             <h3>No matching events found</h3>
             <p>We couldn't find any events matching your search or filter criteria. Try searching for a different keyword or resetting filters.</p>
-            <button type="button" class="reset-filter-btn" onclick="document.getElementById('eventSearch').value=''; document.querySelector('.category-filter[data-category=\'all\']').click();">
+            <button type="button" id="resetFiltersBtn" class="reset-filter-btn">
                 Reset All Filters
             </button>
         </div>

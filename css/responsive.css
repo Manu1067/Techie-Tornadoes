@@ -64,6 +64,11 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 8px;
     }
+
+    .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px 18px;
+    }
 }
 
 /* =====================================================
@@ -175,6 +180,11 @@
     .primary-btn,
     .secondary-btn {
         width: 100%;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
     }
 
     /* Highlight Event */
@@ -300,6 +310,11 @@
 
     .registration-card {
         padding: 20px 14px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
 

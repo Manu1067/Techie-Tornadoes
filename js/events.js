@@ -588,20 +588,32 @@ function createEventRowMarkup(event) {
 /**
  * Render list of events into event container element
  * @param {Array} eventsList Array of event objects to render
+ * @param {boolean} hasActiveFilters Whether active filters/search criteria are applied
  */
-function renderEvents(eventsList = eventsData) {
+function renderEvents(eventsList = eventsData, hasActiveFilters = false) {
     const container = document.getElementById("eventContainer") || document.querySelector(".event-list");
-    const noEventsMsg = document.getElementById("noEvents");
+    const noEventsMsg = document.getElementById("noEventsMessage") || document.getElementById("noEvents") || document.querySelector(".no-events-state");
 
     if (!container) return;
 
     if (!eventsList || eventsList.length === 0) {
         container.innerHTML = "";
-        if (noEventsMsg) noEventsMsg.hidden = false;
+        if (noEventsMsg) {
+            if (hasActiveFilters) {
+                noEventsMsg.hidden = false;
+                noEventsMsg.style.display = "flex";
+            } else {
+                noEventsMsg.hidden = true;
+                noEventsMsg.style.display = "none";
+            }
+        }
         return;
     }
 
-    if (noEventsMsg) noEventsMsg.hidden = true;
+    if (noEventsMsg) {
+        noEventsMsg.hidden = true;
+        noEventsMsg.style.display = "none";
+    }
 
     container.innerHTML = eventsList.map(createEventRowMarkup).join("");
 

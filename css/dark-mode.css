@@ -212,6 +212,41 @@ body.dark-mode .past-event,
     color: var(--primary);
 }
 
+/* How Events Work (Dark Mode) */
+body.dark-mode .how-events-work,
+[data-theme="dark"] .how-events-work {
+    background: #07111e;
+}
+
+body.dark-mode .step-card,
+[data-theme="dark"] .step-card {
+    background: #0f1d2e;
+    border-color: #1e2e45;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .step-card:hover,
+[data-theme="dark"] .step-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 12px 30px rgba(8, 217, 214, 0.2);
+}
+
+body.dark-mode .step-card h3,
+[data-theme="dark"] .step-card h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .step-card p,
+[data-theme="dark"] .step-card p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .step-badge,
+[data-theme="dark"] .step-badge {
+    background: linear-gradient(135deg, var(--primary) 0%, #06c3c0 100%);
+    color: #071525;
+}
+
 /* =====================================================
    EVENTS PAGE HERO & CONTROLS (DARK MODE)
    ===================================================== */
