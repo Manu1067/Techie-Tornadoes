@@ -186,11 +186,6 @@ function createEventRowMarkup(event) {
                 </div>
                 <div class="event-extra-details" hidden>
                     <p class="extra-desc">${event.detailedDescription}</p>
-                    <div class="extra-actions">
-                        <a href="registration.html?event=${encodeURIComponent(event.name)}" class="register-now-btn">
-                            Register For ${event.name} →
-                        </a>
-                    </div>
                 </div>
             </div>
 

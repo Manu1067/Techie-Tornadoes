@@ -294,7 +294,7 @@
 
     color: #20242c;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 650;
 
@@ -306,7 +306,7 @@
 .events-page .category-filter span {
     color: #08aeb0;
 
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .events-page .category-filter:hover {
@@ -468,7 +468,7 @@
 
     color: #17202b;
 
-    font-size: 20px;
+    font-size: 23px;
 
     line-height: 1.2;
 
@@ -487,7 +487,7 @@
 .events-page .event-basic-info span {
     color: #697789;
 
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.4;
 }
@@ -501,7 +501,7 @@
 
     border-radius: 4px;
 
-    font-size: 11px;
+    font-size: 13px;
 
     font-weight: 750;
 }
@@ -537,7 +537,7 @@
 
     color: #536273;
 
-    font-size: 12px;
+    font-size: 14px;
 
     line-height: 1.6;
 }
@@ -596,7 +596,7 @@
 
     color: #542b86;
 
-    font-size: 15px;
+    font-size: 16px;
 
     font-weight: 700;
 }
@@ -610,7 +610,7 @@
 
     color: #7a838d;
 
-    font-size: 10px;
+    font-size: 11px;
 
     line-height: 1.3;
 }
@@ -618,7 +618,7 @@
 .events-page .event-description .event-details b {
     color: #20242c;
 
-    font-size: 11px;
+    font-size: 13px;
 
     font-weight: 700;
 
@@ -628,7 +628,6 @@
 
 /* =========================================================
    EVENT ACTIONS
-   Only View Details remains
    ========================================================= */
 
 .events-page .event-actions {
@@ -643,10 +642,13 @@
     gap: 8px;
 }
 
-.events-page .details-toggle-btn {
+.events-page .details-toggle-btn,
+.events-page .direct-register-btn {
     display: inline-flex;
 
     align-items: center;
+
+    justify-content: center;
 
     gap: 5px;
 
@@ -654,18 +656,29 @@
 
     border: none;
 
+    border-radius: 0;
+
     background: transparent;
 
     color: #08aeb0;
+
+    font-family: inherit;
 
     font-size: 12px;
 
     font-weight: 750;
 
+    line-height: 1.3;
+
     cursor: pointer;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
 }
 
-.events-page .details-toggle-btn:hover {
+.events-page .details-toggle-btn:hover,
+.events-page .direct-register-btn:hover {
     color: #058f91;
 
     text-decoration: underline;
@@ -696,11 +709,6 @@
 
     font-size: 11px !important;
 }
-
-.events-page .extra-actions {
-    margin-top: 6px;
-}
-
 
 /* =========================================================
    EMPTY STATE
@@ -884,7 +892,7 @@
     }
 
     .events-page .event-main-info h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
 
@@ -901,7 +909,7 @@
     }
 
     .events-page .event-description p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
 
@@ -932,7 +940,8 @@
             5px 0 0;
     }
 
-    .events-page .details-toggle-btn {
+    .events-page .details-toggle-btn,
+    .events-page .direct-register-btn {
         justify-content: center;
 
         padding: 9px;
@@ -961,7 +970,7 @@
     }
 
     .events-page .event-main-info h2 {
-        font-size: 19px;
+        font-size: 21px;
     }
 
     .events-page .event-description .event-details {
