@@ -775,3 +775,29 @@ body.dark-mode .hero-buttons .secondary-btn:hover,
         width: 100%;
     }
 }
+/* =====================================================
+   FIX: LOGIN CTA TEXT IN DARK MODE
+   ===================================================== */
+
+body.dark-mode .login-cta {
+    background: #f8fafc;
+}
+
+body.dark-mode .login-cta h2 {
+    color: #0b1b2b;
+}
+
+body.dark-mode .login-cta p {
+    color: #64748b;
+}
+
+body.dark-mode .login-cta a {
+    color: #00bfc3;
+    border-color: #00bfc3;
+    background: transparent;
+}
+
+body.dark-mode .login-cta a:hover {
+    background: #00c8cc;
+    color: #ffffff;
+}
