@@ -222,13 +222,15 @@ function initializeButtonEffects() {
 // =====================================================
 function initializeScrollAnimations() {
     const animatedElements = document.querySelectorAll(
-        ".highlight-event, .section-header, .cta-container, .event-row, .registration-card, .scroll-animate, .contact-form-card, .contact-details-card, .faq-section, .legal-content, .about-mission"
+        ".highlight-event, .section-header, .cta-container, .event-row, .registration-card, .scroll-animate, .contact-form-card, .contact-details-card, .faq-section, .legal-content, .about-mission, .page-hero-content"
     );
 
-    if (!("IntersectionObserver" in window)) {
-        animatedElements.forEach((el) => el.classList.add("visible"));
-        return;
-    }
+    // Make all elements visible immediately by default to prevent blank pages
+    animatedElements.forEach((el) => {
+        el.classList.add("visible");
+    });
+
+    if (!("IntersectionObserver" in window)) return;
 
     const observer = new IntersectionObserver(
         (entries, obs) => {
@@ -239,11 +241,10 @@ function initializeScrollAnimations() {
                 }
             });
         },
-        { threshold: 0.1 }
+        { threshold: 0.01 }
     );
 
     animatedElements.forEach((el) => {
-        el.classList.add("scroll-animate");
         observer.observe(el);
     });
 }
@@ -308,3 +309,41 @@ window.showTechieToast = function (message, duration = 3000) {
         setTimeout(() => toast.remove(), 300);
     }, duration);
 };
+
+// =====================================================
+// 10. SOCIAL OAUTH BUTTON HANDLER (Global)
+// =====================================================
+function initializeSocialButtons() {
+    const socialButtons = document.querySelectorAll(
+        ".social-register button, .social-register .social-btn, [data-provider]"
+    );
+
+    socialButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const provider = btn.getAttribute("data-provider") || btn.textContent.trim().replace(/[^a-zA-Z]/g, "") || "Social";
+            
+            // TODO: integrate OAuth provider
+            console.log(provider);
+
+            if (window.showTechieToast) {
+                window.showTechieToast(`🌐 ${provider} sign-in coming soon`);
+            }
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Techie-Tornadoes initialized.");
+
+    initializeNavigation();
+    initializeMobileMenu();
+    initializeNavbarScrollEffect();
+    initializeHighlightGalleries();
+    initializeButtonEffects();
+    initializeScrollAnimations();
+    initializeImageHandling();
+    updateCurrentYear();
+    initializeToast();
+    initializeSocialButtons();
+});

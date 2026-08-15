@@ -656,15 +656,21 @@ footer {
 
 /* Scroll Animations */
 .scroll-animate {
-    opacity: 0;
-    transform: translateY(10px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1), transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.scroll-animate.visible {
-    opacity: 1;
-    transform: translateY(0);
+.js-animate .scroll-animate:not(.visible) {
+    opacity: 0;
+    transform: translateY(10px);
 }
+
+.scroll-animate.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 
 /* Event Row Animate In */
 .event-animate-in {
