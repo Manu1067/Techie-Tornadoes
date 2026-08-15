@@ -801,3 +801,109 @@ body.dark-mode .login-cta a:hover {
     background: #00c8cc;
     color: #ffffff;
 }
+/* =====================================================
+   EVENTS PAGE - DARK MODE TEXT VISIBILITY FIX
+   ===================================================== */
+
+/* Event card main text */
+body.dark-mode .events-page .event-row {
+    color: #f1f5f9 !important;
+}
+
+/* Event titles */
+body.dark-mode .events-page .event-title,
+body.dark-mode .events-page .event-row h2,
+body.dark-mode .events-page .event-row h3 {
+    color: #f8fafc !important;
+}
+
+/* Event description */
+body.dark-mode .events-page .event-description,
+body.dark-mode .events-page .event-description p,
+body.dark-mode .events-page .event-row p {
+    color: #cbd5e1 !important;
+}
+
+/* Date, location and other basic information */
+body.dark-mode .events-page .event-meta,
+body.dark-mode .events-page .event-meta span,
+body.dark-mode .events-page .event-date,
+body.dark-mode .events-page .event-location {
+    color: #cbd5e1 !important;
+}
+
+/* Information labels:
+   Team Size, Deadline, Duration, Prize Pool */
+body.dark-mode .events-page .event-info,
+body.dark-mode .events-page .event-info span,
+body.dark-mode .events-page .event-info small,
+body.dark-mode .events-page .event-info-label {
+    color: #94a3b8 !important;
+}
+
+/* Information values:
+   1 - 3 Members, dates, duration, prize */
+body.dark-mode .events-page .event-info strong,
+body.dark-mode .events-page .event-info b,
+body.dark-mode .events-page .event-info-value {
+    color: #f1f5f9 !important;
+}
+
+/* Category badge */
+body.dark-mode .events-page .event-category {
+    color: #073b3a !important;
+    background: #c8f5f4 !important;
+}
+
+/* View Details button */
+body.dark-mode .events-page .view-details-btn {
+    color: #08d9d6 !important;
+    background: transparent !important;
+    border-color: #08d9d6 !important;
+}
+
+/* View Details hover */
+body.dark-mode .events-page .view-details-btn:hover {
+    color: #ffffff !important;
+    background: #08d9d6 !important;
+}
+
+/* Register button */
+body.dark-mode .events-page .direct-register-btn {
+    color: #06202b !important;
+    background: linear-gradient(
+        135deg,
+        #08d9d6 0%,
+        #06b8b6 100%
+    ) !important;
+    border: none !important;
+}
+
+/* Register button hover */
+body.dark-mode .events-page .direct-register-btn:hover {
+    color: #ffffff !important;
+    background: linear-gradient(
+        135deg,
+        #05aaa8 0%,
+        #049694 100%
+    ) !important;
+}
+
+/* Event information boxes */
+body.dark-mode .events-page .event-info-grid,
+body.dark-mode .events-page .event-info {
+    border-color: #243b53 !important;
+}
+
+/* Make event icons visible */
+body.dark-mode .events-page .event-info svg,
+body.dark-mode .events-page .event-info i,
+body.dark-mode .events-page .event-meta svg,
+body.dark-mode .events-page .event-meta i {
+    opacity: 1 !important;
+}
+
+/* Prevent disabled-looking text */
+body.dark-mode .events-page .event-row * {
+    text-shadow: none;
+}
