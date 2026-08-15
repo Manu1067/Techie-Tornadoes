@@ -753,3 +753,73 @@ footer {
     opacity: 0;
     transform: translateY(15px);
 }
+/* =====================================================
+   EVENT LIST - IMAGE + CARD LAYOUT
+   Larger images while keeping the complete poster visible
+   ===================================================== */
+
+.events-page .event-row {
+    display: grid;
+    grid-template-columns: 290px 210px minmax(0, 1fr) 140px;
+    gap: 20px;
+    align-items: center;
+}
+
+.events-page .event-image {
+    width: 290px !important;
+    height: 190px !important;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.events-page .event-image img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block;
+    border-radius: 8px;
+}
+
+@media (max-width: 1100px) {
+    .events-page .event-row {
+        grid-template-columns: 250px 190px minmax(0, 1fr) 120px;
+        gap: 15px;
+    }
+
+    .events-page .event-image {
+        width: 250px !important;
+        height: 175px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .events-page .event-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .events-page .event-image {
+        width: 100% !important;
+        height: 220px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-page .event-image {
+        height: 230px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-page .event-image {
+        height: 210px !important;
+    }
+}
