@@ -80,9 +80,6 @@
 
         const config = providerConfig[provider] || providerConfig.Google;
 
-        // Automatically open official provider portal in new window
-        window.open(config.officialUrl, "_blank", "noopener");
-
         // Build Modal Element
         const modal = document.createElement("div");
         modal.id = "socialAuthModal";
@@ -91,23 +88,19 @@
             <div class="social-modal-backdrop"></div>
             <div class="social-modal-dialog">
                 <div class="social-modal-header" style="border-top: 4px solid ${config.brandColor}">
-                    <div class="provider-badge" style="background:${config.provider === 'Google' ? '#ffffff' : config.brandColor}">
+                    <div class="provider-badge" style="background:${config.brandColor}">
                         ${config.svg}
                     </div>
                     <div>
-                        <h3>Sign in with ${provider}</h3>
-                        <p>Opened official ${config.name} portal in new tab</p>
+                        <h3>Sign in to Techie-Tornadoes with ${provider}</h3>
+                        <p>Instant On-Site Authentication</p>
                     </div>
                     <button type="button" class="social-close-btn" aria-label="Close">&times;</button>
                 </div>
 
                 <div class="social-modal-body">
-                    <div class="official-link-banner" style="background: ${config.brandColor}15; border: 1px solid ${config.brandColor}40; padding: 12px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px;">
-                        <span style="font-size: 12px; color: var(--navy); font-weight: 600;">🔗 Opened Official ${provider} Sign-In</span>
-                        <a href="${config.officialUrl}" target="_blank" rel="noopener" style="background: ${config.brandColor}; color: white; padding: 6px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-decoration: none;">Launch Site ↗</a>
-                    </div>
+                    <p class="section-title">Select your ${provider} account to sign in:</p>
 
-                    <p class="section-title">Select profile to complete event registration:</p>
 
                     <div class="account-options-list">
                         ${config.accounts.map((acc, index) => `
@@ -267,7 +260,17 @@
                 authProvider: provider
             };
 
-            // Save to LocalStorage
+            // Save active session to LocalStorage
+            const sessionData = {
+                id: regId,
+                name: finalName,
+                email: finalEmail,
+                provider: provider,
+                event: selectedEvent
+            };
+            localStorage.setItem("techie_user_session", JSON.stringify(sessionData));
+
+            // Save to Registrations list
             if (window.TechieStorage) {
                 window.TechieStorage.saveRegistration(socialRegistration);
             } else {
@@ -277,6 +280,12 @@
             }
 
             closeModal();
+
+            // Update top navbar session if function exists
+            if (window.updateNavbarUserSession) {
+                window.updateNavbarUserSession();
+            }
+
 
             // Display Toast feedback
             if (window.showTechieToast) {
