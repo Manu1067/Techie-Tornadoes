@@ -225,10 +225,9 @@ button, input, select, textarea {
     margin: 0 auto;
     overflow: hidden;
 }
-
 .hero-text {
     position: relative;
-    width: 58%;
+    width: 50%;
     min-height: 450px;
     padding: 70px 60px 70px max(40px, calc((100vw - 1380px) / 2));
     display: flex;
@@ -236,7 +235,7 @@ button, input, select, textarea {
     justify-content: center;
     background: linear-gradient(110deg, #08d9d6 0%, #06c3c0 100%);
     z-index: 2;
-    clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 78% 100%, 0 100%);
 }
 .eyebrow {
     color: var(--navy);
