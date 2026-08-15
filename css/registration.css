@@ -74,10 +74,83 @@
 
 .intro-description {
     color: #1e293b;
-    font-size: 16px;
+    font-size: 15.5px;
     line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 480px;
+    margin-bottom: 20px;
+    max-width: 520px;
+}
+
+/* ================= INTRO ILLUSTRATION FRAME ================= */
+.intro-illustration-wrapper {
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.intro-illustration-frame {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border-radius: var(--radius);
+    overflow: visible;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.intro-illustration-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+}
+
+.intro-illustration-frame:hover img {
+    transform: scale(1.03);
+}
+
+.illustration-badge {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    background: rgba(7, 21, 37, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 750;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    z-index: 3;
+    animation: floatSlow 3.5s ease-in-out infinite;
+}
+
+.illustration-badge.badge-top-right {
+    top: -12px;
+    right: -10px;
+    animation-delay: 0s;
+}
+
+.illustration-badge.badge-bottom-left {
+    bottom: -12px;
+    left: -10px;
+    animation-delay: 1.8s;
+}
+
+.badge-icon {
+    font-size: 14px;
 }
 
 /* Stats Cards */
