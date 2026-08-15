@@ -1220,19 +1220,21 @@
 
 /* =========================================================
    FINAL EVENT-PAGE OVERRIDES
-   - Hero diagonal uses the same teal
-   - Event posters are never cropped
-   - Circular event-image logos are not displayed
+   - Keep the hero diagonal exactly the same teal as the hero
+   - Show complete event posters without cropping
+   - Remove decorative circular logos from event posters
    ========================================================= */
 
 .events-page .events-hero-image::before {
-    background: #08d9d6;
+    background: #08d9d6 !important;
 }
 
+/* Keep the complete poster visible on desktop/tablet/mobile */
 .events-page .event-image {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     background: #f8fafc;
 }
 
@@ -1240,9 +1242,11 @@
     width: 100%;
     height: 100%;
     object-fit: contain !important;
-    object-position: center;
+    object-position: center center;
+    display: block;
 }
 
+/* Remove the small circular decorative logos/icons over posters */
 .events-page .event-image-icon {
     display: none !important;
 }
