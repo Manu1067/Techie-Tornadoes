@@ -829,3 +829,247 @@
     font-size: 11px;
     color: #64748b;
 }
+
+/* =========================================================
+   REALISTIC GOOGLE SIGN-IN DIALOG
+   ========================================================= */
+
+.gsi-modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    padding: 40px 40px 24px;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    transform: translateY(10px);
+    transition: transform 0.25s ease;
+}
+
+.social-auth-modal.active .gsi-modal-dialog {
+    transform: translateY(0);
+}
+
+.gsi-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    color: #5f6368;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.gsi-close-btn:hover {
+    background: #f1f3f4;
+}
+
+.gsi-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.gsi-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.gsi-logo svg {
+    width: 40px;
+    height: 40px;
+}
+
+.gsi-header h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #202124;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+}
+
+.gsi-header p {
+    font-size: 14px;
+    color: #5f6368;
+    line-height: 1.4;
+}
+
+.gsi-header p strong {
+    font-weight: 600;
+    color: #202124;
+}
+
+.gsi-account-list {
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.gsi-account-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #e8eaed;
+    transition: background 0.15s ease;
+    background: #ffffff;
+}
+
+.gsi-account-row:last-child {
+    border-bottom: none;
+}
+
+.gsi-account-row:hover {
+    background: #f8f9fa;
+}
+
+.gsi-account-row input[type="radio"] {
+    display: none;
+}
+
+.gsi-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #1a73e8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.gsi-avatar-plus {
+    background: #f1f3f4;
+    color: #5f6368;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.gsi-acc-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    text-align: left;
+}
+
+.gsi-acc-text strong {
+    font-size: 14px;
+    font-weight: 500;
+    color: #202124;
+}
+
+.gsi-acc-text span {
+    font-size: 13px;
+    color: #5f6368;
+}
+
+.gsi-add-account {
+    border: none;
+    width: 100%;
+    font: inherit;
+    text-align: left;
+}
+
+.gsi-custom-fields {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gsi-input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #202124;
+    margin-bottom: 4px;
+}
+
+.gsi-input-group input {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.gsi-input-group input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 1px #1a73e8;
+}
+
+.gsi-event-note {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #5f6368;
+    margin-bottom: 16px;
+}
+
+.gsi-event-note strong {
+    color: #202124;
+}
+
+.gsi-footer-note {
+    font-size: 12px;
+    color: #5f6368;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.gsi-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.gsi-actions .social-cancel-btn {
+    border: none;
+    background: transparent;
+    color: #1a73e8;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.gsi-actions .social-cancel-btn:hover {
+    background: #f1f3f4;
+}
+
+.gsi-confirm-btn {
+    background: #1a73e8 !important;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 24px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    flex: none !important;
+}
+
+.gsi-confirm-btn:hover {
+    background: #1765cc !important;
+}
