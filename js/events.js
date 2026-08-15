@@ -445,10 +445,9 @@ function createEventRowMarkup(event) {
             <!-- MAIN VISIBLE CARD -->
             <div class="event-card-main">
                 
-                <!-- POSTER IMAGE -->
+                <!-- POSTER IMAGE (100% Full Uncropped Poster) -->
                 <div class="event-image-col">
                     <img src="${event.image}" alt="${event.name}" onerror="this.onerror=null; this.src='images/event.png';">
-                    <span class="event-category-badge ${categoryBadgeClass}">${event.categoryName}</span>
                 </div>
 
                 <!-- EVENT CONTENT BODY -->
@@ -457,7 +456,10 @@ function createEventRowMarkup(event) {
                     <!-- HEADER / TITLE ROW -->
                     <div class="event-header-row">
                         <div class="event-title-area">
-                            <h2 class="event-title">${event.name}</h2>
+                            <div class="event-title-top">
+                                <h2 class="event-title">${event.name}</h2>
+                                <span class="event-category-badge ${categoryBadgeClass}">${event.categoryName}</span>
+                            </div>
                             <div class="event-meta-tags">
                                 <span class="meta-tag"><i class="meta-icon">📅</i> ${event.date}</span>
                                 <span class="meta-tag"><i class="meta-icon">📍</i> ${event.location}</span>

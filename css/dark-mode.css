@@ -218,33 +218,54 @@ body.dark-mode .past-event,
 
 body.dark-mode .events-hero,
 [data-theme="dark"] .events-hero {
-    background: linear-gradient(135deg, #08d9d6 0%, #06c3c0 45%, #05a8a6 100%) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: #07111e !important;
 }
 
-body.dark-mode .events-hero-text h1,
-[data-theme="dark"] .events-hero-text h1 {
+body.dark-mode .events-hero-text,
+[data-theme="dark"] .events-hero-text {
+    background: linear-gradient(110deg, #08d9d6 0%, #06c3c0 100%) !important;
+}
+
+body.dark-mode .events-eyebrow,
+[data-theme="dark"] .events-eyebrow {
     color: #071525 !important;
 }
 
-body.dark-mode .events-hero-text h1 span,
-[data-theme="dark"] .events-hero-text h1 span {
+body.dark-mode .events-hero h1,
+[data-theme="dark"] .events-hero h1 {
+    color: #071525 !important;
+}
+
+body.dark-mode .events-hero h1 span.turquoise,
+[data-theme="dark"] .events-hero h1 span.turquoise {
     color: #ffffff !important;
 }
 
-body.dark-mode .hero-subtext,
-[data-theme="dark"] .hero-subtext {
+body.dark-mode .events-hero-description,
+[data-theme="dark"] .events-hero-description {
     color: #102636 !important;
 }
 
-body.dark-mode .hero-stat-card strong,
-[data-theme="dark"] .hero-stat-card strong {
+body.dark-mode .events-primary-btn,
+[data-theme="dark"] .events-primary-btn {
+    background: #071525 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .events-primary-btn:hover,
+[data-theme="dark"] .events-primary-btn:hover {
+    background: #112338 !important;
+}
+
+body.dark-mode .events-secondary-btn,
+[data-theme="dark"] .events-secondary-btn {
+    border-color: #071525 !important;
     color: #071525 !important;
 }
 
-body.dark-mode .hero-stat-card span,
-[data-theme="dark"] .hero-stat-card span {
-    color: #102636 !important;
+body.dark-mode .events-secondary-btn:hover,
+[data-theme="dark"] .events-secondary-btn:hover {
+    background: rgba(7, 21, 37, 0.1) !important;
 }
 
 /* Event Controls */
@@ -591,10 +612,17 @@ body.dark-mode .intro-description,
     color: #102636 !important;
 }
 
-body.dark-mode .intro-illustration-frame,
-[data-theme="dark"] .intro-illustration-frame {
+body.dark-mode .intro-visual-card,
+[data-theme="dark"] .intro-visual-card {
     background: rgba(255, 255, 255, 0.22) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+body.dark-mode .visual-badge,
+[data-theme="dark"] .visual-badge {
+    background: rgba(7, 21, 37, 0.92) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
 }
 
 body.dark-mode .stat-card,

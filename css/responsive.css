@@ -84,13 +84,13 @@
         max-width: 100%;
     }
 
-    .intro-illustration-wrapper {
+    .intro-visual-wrapper {
         max-width: 100%;
     }
 
-    .intro-illustration-frame {
+    .intro-visual-card {
         max-width: 100%;
-        height: 220px;
+        min-height: 220px;
     }
 
     .registration-form-section {
@@ -275,13 +275,18 @@
         font-size: 32px;
     }
 
-    .intro-illustration-frame {
-        height: 190px;
+    .intro-visual-card {
+        min-height: 190px;
+        padding: 10px;
     }
 
-    .illustration-badge {
+    .register-hero-img {
+        max-height: 180px;
+    }
+
+    .visual-badge {
         font-size: 11px;
-        padding: 5px 10px;
+        padding: 6px 12px;
     }
 
     .registration-intro {

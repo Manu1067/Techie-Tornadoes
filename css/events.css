@@ -1,6 +1,6 @@
 /* =========================================================
    TECHIE-TORNADOES - EVENTS PAGE STYLES
-   Modern, Spacious, Balanced & Responsive Design
+   Signature Hero Matching Home Page + Full Uncropped Posters
    ========================================================= */
 
 .events-page {
@@ -36,197 +36,141 @@
 }
 
 /* =========================================================
-   EVENTS HERO SECTION
+   EVENTS HERO SECTION (MATCHES HOME PAGE SIGNATURE HERO)
    ========================================================= */
 
-.events-hero {
-    background: linear-gradient(135deg, #08d9d6 0%, #06c3c0 45%, #05a8a6 100%);
-    position: relative;
+.events-page .events-hero {
+    background: #f4fbfc;
     overflow: hidden;
-    padding: 50px 0 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
 }
 
-.events-hero::before {
-    content: "";
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.events-hero::after {
-    content: "";
-    position: absolute;
-    bottom: -80px;
-    left: 10%;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 46, 99, 0.12) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.events-hero-container {
-    max-width: 1380px;
+.events-page .events-hero-content {
+    position: relative;
+    min-height: 450px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 0 40px;
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    align-items: center;
-    gap: 48px;
+    overflow: hidden;
+}
+
+.events-page .events-hero-text {
+    position: relative;
+    width: 55%;
+    min-height: 450px;
+    padding: 70px 60px 70px max(40px, calc((100vw - 1380px) / 2));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(110deg, #08d9d6 0%, #06c3c0 100%);
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 78% 100%, 0 100%);
+}
+
+.events-page .events-eyebrow {
+    color: var(--events-navy);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
     position: relative;
     z-index: 2;
 }
 
-.events-hero-text {
+.events-page .events-hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(38px, 4vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    font-weight: 900;
+    color: var(--events-navy);
+    margin-bottom: 18px;
+}
+
+.events-page .events-hero h1 span.turquoise {
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(7, 21, 37, 0.15);
+}
+
+.events-page .events-hero-description {
+    position: relative;
+    z-index: 2;
+    color: #1e293b;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 480px;
+}
+
+.events-page .events-hero-buttons {
+    position: relative;
+    z-index: 3;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 16px;
 }
 
-.events-eyebrow {
+.events-page .events-primary-btn,
+.events-page .events-secondary-btn {
+    min-height: 48px;
+    padding: 0 24px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    width: fit-content;
-    padding: 6px 14px;
-    background: rgba(7, 21, 37, 0.12);
-    border: 1px solid rgba(7, 21, 37, 0.08);
-    border-radius: 30px;
-    color: var(--events-navy);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.eyebrow-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ff2e63;
-    box-shadow: 0 0 8px #ff2e63;
-    animation: pulseCyanGlow 2s infinite;
-}
-
-.events-hero-text h1 {
-    font-size: clamp(36px, 4.2vw, 54px);
-    font-weight: 900;
-    line-height: 1.1;
-    color: #071525;
-    letter-spacing: -1.5px;
-}
-
-.events-hero-text h1 span {
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.hero-subtext {
-    font-size: 16px;
-    line-height: 1.65;
-    color: #102636;
-    max-width: 580px;
-}
-
-.events-hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 8px;
-}
-
-.hero-stat-card {
-    display: flex;
-    flex-direction: column;
-    padding: 12px 18px;
-    background: rgba(255, 255, 255, 0.22);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: var(--events-radius-sm);
-    transition: transform 0.25s ease;
-}
-
-.hero-stat-card:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.32);
-}
-
-.hero-stat-card strong {
-    font-size: 20px;
-    font-weight: 900;
-    color: #071525;
-    line-height: 1.2;
-}
-
-.hero-stat-card span {
-    font-size: 11px;
-    font-weight: 700;
-    color: #102636;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Hero Image Banner Frame */
-.events-hero-image-wrapper {
-    display: flex;
     justify-content: center;
+    gap: 10px;
+    border-radius: var(--events-radius-sm);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--events-transition);
 }
 
-.hero-image-frame {
-    position: relative;
+.events-page .events-primary-btn {
+    background: var(--events-navy);
+    color: white;
+    box-shadow: 0 4px 15px rgba(7, 21, 37, 0.2);
+}
+
+.events-page .events-primary-btn:hover {
+    background: var(--events-navy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(7, 21, 37, 0.3);
+}
+
+.events-page .events-secondary-btn {
+    background: transparent;
+    border: 2px solid var(--events-navy);
+    color: var(--events-navy);
+}
+
+.events-page .events-secondary-btn:hover {
+    background: rgba(7, 21, 37, 0.08);
+    transform: translateY(-2px);
+}
+
+.events-page .events-hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 100%;
-    max-width: 480px;
-    height: 280px;
-    border-radius: var(--events-radius-lg);
+    height: 100%;
     overflow: hidden;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
-    border: 3px solid rgba(255, 255, 255, 0.5);
-    background: #f8fafc;
+    z-index: 1;
 }
 
-.hero-image-frame img {
-    width: 100%;
+.events-page .events-hero-image img {
+    padding-left: 40%;
+    width: auto;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s ease;
 }
 
-.hero-image-frame:hover img {
-    transform: scale(1.04);
-}
-
-.hero-image-badge {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 14px;
-    background: rgba(7, 21, 37, 0.85);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.badge-pulse {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #10b981;
-    box-shadow: 0 0 8px #10b981;
+.events-page .events-hero-image:hover img {
+    transform: scale(1.03);
 }
 
 /* =========================================================
@@ -462,67 +406,70 @@
 }
 
 /* =========================================================
-   MAIN VISIBLE CARD SECTION
+   MAIN VISIBLE CARD SECTION (UNCROPPED COMPLETE IMAGE)
    ========================================================= */
 
 .event-card-main {
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 290px 1fr;
     gap: 24px;
     padding: 18px;
     align-items: stretch;
 }
 
-/* Poster Column */
+/* Poster Column - Displays 100% of the entire image properly */
 .event-image-col {
     position: relative;
-    width: 260px;
-    min-height: 190px;
+    width: 290px;
+    min-height: 195px;
     height: 100%;
     border-radius: var(--events-radius-sm);
     overflow: hidden;
-    background: var(--events-surface-alt);
+    background: #0b1726; /* Sleek dark neutral frame so full image is clean */
+    border: 1px solid rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 6px;
+    flex-shrink: 0;
 }
 
 .event-image-col img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    max-height: 200px;
+    object-fit: contain !important; /* Preserves entire graphic without cropping */
+    object-position: center center;
     display: block;
-    transition: transform 0.5s ease;
+    border-radius: 6px;
+    transition: transform 0.4s ease;
 }
 
 .event-row:hover .event-image-col img {
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
+/* Category Badge inside header / card */
 .event-category-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    display: inline-flex;
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .blue-category {
-    background: #071525;
-    color: var(--events-teal);
+    background: rgba(8, 217, 214, 0.14);
+    color: #039396;
     border: 1px solid rgba(8, 217, 214, 0.35);
 }
 
 .pink-category {
-    background: #071525;
-    color: #ff2e63;
-    border: 1px solid rgba(255, 46, 99, 0.35);
+    background: rgba(255, 46, 99, 0.12);
+    color: #ed285b;
+    border: 1px solid rgba(255, 46, 99, 0.3);
 }
 
 /* Event Content Body Column */
@@ -544,7 +491,14 @@
 .event-title-area {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+}
+
+.event-title-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .event-title {
@@ -564,7 +518,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
 }
 
 .meta-tag {
@@ -1082,27 +1036,31 @@
 }
 
 /* =========================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (TABLET & MOBILE)
    ========================================================= */
 
 @media (max-width: 1100px) {
-    .events-hero-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+    .events-page .events-hero-content {
+        grid-template-columns: 50% 50%;
     }
-    
+
+    .events-page .events-hero-text {
+        width: 55%;
+        padding-right: 40px;
+    }
+
     .event-controls {
         grid-template-columns: 1fr 180px 170px 130px;
     }
 
     .event-card-main {
-        grid-template-columns: 220px 1fr;
+        grid-template-columns: 250px 1fr;
         gap: 18px;
     }
 
     .event-image-col {
-        width: 220px;
-        min-height: 175px;
+        width: 250px;
+        min-height: 180px;
     }
 
     .event-metrics-grid {
@@ -1116,22 +1074,33 @@
 }
 
 @media (max-width: 860px) {
-    .events-hero {
-        padding: 40px 0;
+    .events-page .events-hero-content {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
     }
 
-    .events-hero-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .events-page .events-hero-text {
+        width: 100%;
+        min-height: auto;
+        padding: 50px 25px;
+        clip-path: none;
     }
 
-    .events-hero-image-wrapper {
-        justify-content: flex-start;
+    .events-page .events-hero-image {
+        position: relative;
+        width: 100%;
+        height: 250px;
     }
 
-    .hero-image-frame {
-        max-width: 100%;
-        height: 240px;
+    .events-page .events-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .events-page .events-primary-btn,
+    .events-page .events-secondary-btn {
+        width: 100%;
     }
 
     .events-main {
@@ -1150,7 +1119,7 @@
 
     .event-image-col {
         width: 100%;
-        height: 200px;
+        height: 220px;
     }
 
     .event-card-actions {
@@ -1177,13 +1146,12 @@
 }
 
 @media (max-width: 520px) {
-    .events-hero-text h1 {
+    .events-page .events-hero h1 {
         font-size: 32px;
     }
 
-    .events-hero-stats {
-        flex-direction: column;
-        gap: 8px;
+    .events-page .events-hero-description {
+        font-size: 15px;
     }
 
     .event-metrics-grid {

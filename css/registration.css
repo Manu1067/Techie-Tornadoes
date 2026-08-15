@@ -80,70 +80,76 @@
     max-width: 520px;
 }
 
-/* ================= INTRO ILLUSTRATION FRAME ================= */
-.intro-illustration-wrapper {
+/* ================= PREMIUM REGISTRATION VISUAL ================= */
+.intro-visual-wrapper {
     margin-bottom: 24px;
     width: 100%;
     max-width: 500px;
+    position: relative;
 }
 
-.intro-illustration-frame {
+.intro-visual-card {
     position: relative;
     width: 100%;
-    height: 240px;
-    border-radius: var(--radius);
-    overflow: visible;
+    min-height: 250px;
+    border-radius: 18px;
     background: rgba(255, 255, 255, 0.22);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.45);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 16px 36px rgba(7, 21, 37, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 16px;
+    overflow: visible;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.intro-illustration-frame img {
+.intro-visual-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 42px rgba(7, 21, 37, 0.18);
+}
+
+.register-hero-img {
     width: 100%;
-    height: 100%;
+    max-height: 220px;
     object-fit: contain;
     object-position: center;
-    border-radius: 12px;
+    filter: drop-shadow(0 10px 22px rgba(7, 21, 37, 0.15));
     transition: transform 0.4s ease;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
 }
 
-.intro-illustration-frame:hover img {
+.intro-visual-card:hover .register-hero-img {
     transform: scale(1.03);
 }
 
-.illustration-badge {
+.visual-badge {
     position: absolute;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 7px 14px;
-    background: rgba(7, 21, 37, 0.88);
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(7, 21, 37, 0.9);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 30px;
     color: #ffffff;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 750;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 8px 24px rgba(7, 21, 37, 0.25);
     z-index: 3;
     animation: floatSlow 3.5s ease-in-out infinite;
 }
 
-.illustration-badge.badge-top-right {
+.visual-badge.badge-top-right {
     top: -12px;
     right: -10px;
     animation-delay: 0s;
 }
 
-.illustration-badge.badge-bottom-left {
+.visual-badge.badge-bottom-left {
     bottom: -12px;
     left: -10px;
     animation-delay: 1.8s;
