@@ -265,6 +265,12 @@ function renderEvents(eventsList = eventsData) {
 
     container.innerHTML = eventsList.map(createEventRowMarkup).join("");
 
+    // Fade-in animation for event cards
+    container.querySelectorAll(".event-row").forEach((row, index) => {
+        row.classList.add("event-animate-in");
+        row.style.animationDelay = `${index * 0.05}s`;
+    });
+
     // Attach expandable details listeners
     container.querySelectorAll(".details-toggle-btn").forEach((btn) => {
         btn.addEventListener("click", function (e) {

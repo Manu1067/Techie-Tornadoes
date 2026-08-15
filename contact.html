@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Techie-Tornadoes</title>
+    <meta name="description" content="Get in touch with Techie-Tornadoes — questions, support, partnerships, and event inquiries.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">〰</span>
+                <span>Techie-Tornadoes</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="registration.html">Register</a>
+            </nav>
+            <div class="nav-right-actions">
+                <button type="button" class="dark-mode-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <a href="login.html" class="login-btn">
+                    <span>👤</span>
+                    Login / Sign Up
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-content scroll-animate">
+                <p class="page-eyebrow">GET IN TOUCH</p>
+                <h1>Contact <span>Us</span></h1>
+                <p>Have a question about events, registration, or partnerships? We'd love to hear from you.</p>
+            </div>
+        </section>
+
+        <section class="contact-page">
+            <div class="contact-layout">
+                <div class="contact-details-card scroll-animate">
+                    <h2>Reach Out</h2>
+                    <p>Our team typically responds within 24–48 hours on business days.</p>
+
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <span>✉</span>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:hello@techietornadoes.in">hello@techietornadoes.in</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <span>📞</span>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <span>📍</span>
+                            <div>
+                                <strong>Office</strong>
+                                <p>Innovation Hub, Pune, Maharashtra 411001</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <strong style="display:block; font-size:13px; color:var(--navy); margin-bottom:10px;">Follow Us</strong>
+                    <div class="contact-social">
+                        <a href="https://www.instagram.com/techietornadoes" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+                        <a href="https://www.linkedin.com/company/techie-tornadoes" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                        <a href="https://github.com/techie-tornadoes" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+
+                <div class="contact-form-card scroll-animate">
+                    <h2>Send a Message</h2>
+                    <p>Fill in the form below and we'll get back to you shortly.</p>
+
+                    <form id="contactForm" class="registration-form" novalidate>
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <div class="input-wrapper">
+                                <span>👤</span>
+                                <input type="text" id="contactName" name="contactName" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <div class="input-wrapper">
+                                <span>✉</span>
+                                <input type="email" id="contactEmail" name="contactEmail" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="contactMessage" placeholder="How can we help you?" required></textarea>
+                        </div>
+
+                        <div id="contactFormMessage" class="form-message"></div>
+
+                        <button type="submit" class="register-button">
+                            Send Message <span>→</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="faq-section scroll-animate">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            How do I register for an event?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Visit our Events page, choose an event, and click Register. You'll be taken to the registration form with the event pre-selected. Fill in your details and submit to confirm your spot.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            Can I register for multiple events?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! You can register for as many events as you like using the same email address. Each event registration generates a unique Registration ID.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            How do I check my registration status?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Go to the Registration page and click "Check Status / Login" at the bottom. Enter your email or Registration ID to view all your confirmed registrations.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            Is there an entry fee for all events?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Most competitions are free to enter. Some workshops like TechTalks 2026 have a nominal entry fee of ₹299. Check each event's details page for specific pricing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>© <span data-current-year>2026</span> Techie-Tornadoes. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/techietornadoes" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+                <a href="https://www.linkedin.com/company/techie-tornadoes" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                <a href="https://github.com/techie-tornadoes" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

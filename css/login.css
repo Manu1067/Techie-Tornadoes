@@ -1,0 +1,75 @@
+/* =====================================================
+   TECHIE-TORNADOES
+   Login Page Styles (extends registration.css)
+   ===================================================== */
+
+/* Full-width form group override (login form is single column) */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ================= LOGIN OPTIONS ROW ================= */
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4px 0 18px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-dark);
+    cursor: pointer;
+}
+
+.remember-me span {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.forgot-password {
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.forgot-password:hover {
+    color: var(--pink);
+    text-decoration: underline;
+}
+
+/* ================= SWITCH FORM TEXT ================= */
+.switch-form-text {
+    text-align: center;
+    margin-top: 18px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.switch-form-text a {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.switch-form-text a:hover {
+    color: var(--pink);
+    text-decoration: underline;
+}
+
+/* ================= ACTIVE NAV STATE FOR LOGIN PAGE ================= */
+.login-btn.active-page {
+    background: var(--navy);
+    color: white;
+}
+
+.login-btn.active-page:hover {
+    background: var(--navy-light);
+}

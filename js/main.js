@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeScrollAnimations();
     initializeImageHandling();
     updateCurrentYear();
+    initializeToast();
 });
 
 // =====================================================
@@ -221,7 +222,7 @@ function initializeButtonEffects() {
 // =====================================================
 function initializeScrollAnimations() {
     const animatedElements = document.querySelectorAll(
-        ".highlight-event, .section-header, .cta-container, .event-row, .registration-card"
+        ".highlight-event, .section-header, .cta-container, .event-row, .registration-card, .scroll-animate, .contact-form-card, .contact-details-card, .faq-section, .legal-content, .about-mission"
     );
 
     if (!("IntersectionObserver" in window)) {

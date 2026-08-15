@@ -26,9 +26,7 @@ function getRegistrations() {
  */
 function saveRegistration(registration) {
     try {
-        // Ensure security requirement: strictly remove password fields
         const safeRegistration = { ...registration };
-        delete safeRegistration.password;
         delete safeRegistration.confirmPassword;
 
         const registrations = getRegistrations();

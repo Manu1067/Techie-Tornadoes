@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techie-Tornadoes | Discover. Build. Compete.</title>
-    <meta name="description" content="Discover the best technical events, workshops, hackathons and competitions for students with Techie-Tornadoes.">
+    <title>About Us | Techie-Tornadoes</title>
+    <meta name="description" content="Learn about Techie-Tornadoes — our mission, community stats, and past successful tech events.">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
 
-    <!-- ================= NAVBAR ================= -->
     <header class="navbar">
         <div class="nav-container">
             <a href="index.html" class="brand">
                 <span class="brand-icon">〰</span>
                 <span>Techie-Tornadoes</span>
             </a>
-
             <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="events.html">Events</a>
                 <a href="registration.html">Register</a>
             </nav>
-
             <div class="nav-right-actions">
                 <button type="button" class="dark-mode-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="theme-icon">🌙</span>
@@ -45,55 +41,69 @@
         </div>
     </header>
 
-    <!-- ================= HERO ================= -->
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <p class="eyebrow">TECH EVENTS PLATFORM</p>
-                    <h1>Discover. <span class="turquoise">Build.</span> Compete.</h1>
-                    <p class="hero-description">
-                        Discover the best technical events for students.<br>
-                        Learn, innovate and compete with the best.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="events.html" class="primary-btn">
-                            Explore Events <span>→</span>
-                        </a>
-                        <a href="#highlights" class="secondary-btn">
-                            <span>▶</span> How It Works
-                        </a>
-                    </div>
-                </div>
+        <section class="page-hero">
+            <div class="page-hero-content scroll-animate">
+                <p class="page-eyebrow">OUR STORY</p>
+                <h1>About <span>Techie-Tornadoes</span></h1>
+                <p>Empowering the next generation of innovators through world-class technical events.</p>
+            </div>
+        </section>
 
-                <div class="hero-image">
-                    <img src="images/herosection.png" alt="Students collaborating on tech project" onerror="this.onerror=null; this.src='images/event.png';">
+        <section class="about-mission scroll-animate">
+            <h2>Our Mission</h2>
+            <p>Techie-Tornadoes was born from a simple belief: every student deserves access to high-quality technical events that challenge their skills, expand their network, and accelerate their career. What started as a small campus hackathon has grown into one of India's most vibrant student tech communities.</p>
+            <p>We curate coding competitions, robotics battles, cybersecurity challenges, innovation showcases, and expert-led workshops — all designed to bridge the gap between classroom learning and real-world problem solving. Whether you're a first-year student writing your first line of code or a seasoned builder ready to compete, Techie-Tornadoes is your launchpad.</p>
+            <p>Built for CodeForge WebSprint 2026, our platform demonstrates how thoughtful frontend design can deliver a complete event management experience — from discovery and registration to community engagement — without a single line of backend code.</p>
+        </section>
+
+        <section class="about-stats-band">
+            <div class="about-stats-inner scroll-animate">
+                <h2>By the Numbers</h2>
+                <div class="intro-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div>
+                            <strong>5000+</strong>
+                            <span>Active Members</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <div>
+                            <strong>50+</strong>
+                            <span>Events Every Year</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div>
+                            <strong>₹5L+</strong>
+                            <span>Prize Pool</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= EVENT HIGHLIGHTS ================= -->
-        <section id="highlights" class="highlights">
-            <div class="section-header">
-                <h2>Event <span>Highlights</span></h2>
+        <section id="past-events" class="highlights about-past-events">
+            <div class="section-header scroll-animate">
+                <h2>Past <span>Events</span></h2>
                 <p>Glimpses of our recent successful events.</p>
             </div>
 
             <div class="highlight-events">
 
-                <!-- FEATURED EVENT 1: CODESPRINT -->
-                <article class="highlight-event">
+                <article class="highlight-event scroll-animate">
                     <div class="highlight-gallery">
                         <img class="main-event-image" src="images/codesprint.png" alt="CodeSprint 2026 Event" onerror="this.onerror=null; this.src='images/event.png';">
                     </div>
-
                     <div class="event-details">
                         <span class="past-event">PAST EVENT</span>
                         <h3>CodeSprint 2026</h3>
                         <p class="event-description">
                             An intense coding competition where brilliant minds solved real-world problems under pressure.
                         </p>
-
                         <div class="event-info-grid">
                             <div class="event-info">
                                 <span class="info-icon">📅</span>
@@ -124,26 +134,22 @@
                                 </div>
                             </div>
                         </div>
-
                         <a href="events.html" class="event-details-btn">
                             View Event Details <span>→</span>
                         </a>
                     </div>
                 </article>
 
-                <!-- FEATURED EVENT 2: ROBOWARS -->
-                <article class="highlight-event">
+                <article class="highlight-event scroll-animate">
                     <div class="highlight-gallery">
                         <img class="main-event-image" src="images/robowars.png" alt="RoboWars 2026 Event" onerror="this.onerror=null; this.src='images/event.png';">
                     </div>
-
                     <div class="event-details">
                         <span class="past-event">PAST EVENT</span>
                         <h3>RoboWars 2026</h3>
                         <p class="event-description">
                             Teams built and battled their robots in an epic showdown of strategy, skills and innovation.
                         </p>
-
                         <div class="event-info-grid">
                             <div class="event-info">
                                 <span class="info-icon">📅</span>
@@ -174,26 +180,22 @@
                                 </div>
                             </div>
                         </div>
-
                         <a href="events.html" class="event-details-btn">
                             View Event Details <span>→</span>
                         </a>
                     </div>
                 </article>
 
-                <!-- FEATURED EVENT 3: TECHTALKS -->
-                <article class="highlight-event">
+                <article class="highlight-event scroll-animate">
                     <div class="highlight-gallery">
                         <img class="main-event-image" src="images/techtalks.png" alt="TechTalks 2026 Event" onerror="this.onerror=null; this.src='images/event.png';">
                     </div>
-
                     <div class="event-details">
                         <span class="past-event">PAST EVENT</span>
                         <h3>TechTalks 2026</h3>
                         <p class="event-description">
                             Insightful sessions by industry experts on the latest trends and future of technology.
                         </p>
-
                         <div class="event-info-grid">
                             <div class="event-info">
                                 <span class="info-icon">📅</span>
@@ -224,7 +226,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <a href="events.html" class="event-details-btn">
                             View Event Details <span>→</span>
                         </a>
@@ -232,28 +233,9 @@
                 </article>
 
             </div>
-
-            <a href="events.html" class="view-events">
-                View All Events <span>→</span>
-            </a>
-        </section>
-
-        <!-- ================= CTA ================= -->
-        <section class="cta">
-            <div class="cta-container">
-                <div class="cta-icon">🚀</div>
-                <div class="cta-text">
-                    <h2>Ready for your next challenge?</h2>
-                    <p>Join exciting events, meet amazing people and build your future.</p>
-                </div>
-                <a href="registration.html" class="cta-button">
-                    Register Now <span>→</span>
-                </a>
-            </div>
         </section>
     </main>
 
-    <!-- ================= FOOTER ================= -->
     <footer>
         <div class="footer-container">
             <p>© <span data-current-year>2026</span> Techie-Tornadoes. All rights reserved.</p>
@@ -270,11 +252,8 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/storage.js"></script>
     <script src="js/dark-mode.js"></script>
     <script src="js/main.js"></script>
-
 </body>
-
 </html>

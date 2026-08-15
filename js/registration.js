@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
             minute: "2-digit"
         });
 
-        // Build safe registration record (excluding passwords)
+        // Build registration record (password stored locally for demo login)
         const registrationData = {
             id: regId,
             fullName: fullName,
@@ -204,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
             year: year,
             branch: branch,
             event: eventChoice,
+            password: password,
             registeredAt: registrationDate
         };
 
@@ -370,12 +371,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --- Social Buttons Simulation ---
     function setupSocialButtons() {
-        const socialButtons = document.querySelectorAll(".social-register button");
+        const socialButtons = document.querySelectorAll(".social-register .social-btn, .social-register button[data-provider]");
         socialButtons.forEach((btn) => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
-                const provider = btn.textContent.trim();
-                alert(`Connecting to ${provider} authentication... In this demo environment, please use the registration form below.`);
+                const provider = btn.getAttribute("data-provider") || btn.textContent.trim();
+                // TODO: integrate OAuth provider
+                console.log(provider);
+                if (window.showTechieToast) {
+                    window.showTechieToast(`${provider} sign-up coming soon`);
+                }
             });
         });
     }
