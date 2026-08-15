@@ -415,14 +415,14 @@
     transform: translateY(-1px);
 }
 .social-register .btn-github {
-    background: #24292e;
-    border: 1px solid #24292e;
-    color: #ffffff;
+    background: #b5b6b8;
+    border: 1px solid #282a2c;
+    color: #000000;
     box-shadow: 0 2px 6px rgba(36, 41, 46, 0.25);
 }
 
 .social-register .btn-github:hover {
-    background: #1b1f23;
+    background: #d6dde3;
     border-color: #1b1f23;
     box-shadow: 0 4px 12px rgba(36, 41, 46, 0.35);
     transform: translateY(-1px);
