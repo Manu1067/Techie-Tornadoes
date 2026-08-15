@@ -1,25 +1,38 @@
 /* =====================================================
    TECHIE-TORNADOES
-   Dark Mode Theme Stylesheet
-   Activated via body.dark-mode or [data-theme="dark"]
+   DARK MODE THEME
+   ===================================================== */
+
+
+/* =====================================================
+   GLOBAL DARK MODE VARIABLES
    ===================================================== */
 
 body.dark-mode,
 [data-theme="dark"] body {
+
     --background: #07111e;
     --white: #0d1929;
     --navy: #f8fafc;
+
     --text: #e2e8f0;
     --text-muted: #94a3b8;
+
     --border: #1e2d42;
     --border-subtle: #162436;
+
     --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.6);
+
     background-color: var(--background);
     color: var(--text);
 }
 
-/* Navbar Dark Mode */
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
 body.dark-mode .navbar {
     background: #0b1726;
     border-bottom-color: #1e2d42;
@@ -44,7 +57,27 @@ body.dark-mode .dark-mode-toggle {
     color: #fbbf24;
 }
 
-/* Hero Section Dark Mode */
+
+/* =====================================================
+   LOGIN / SIGN UP BUTTON
+   ===================================================== */
+
+body.dark-mode .login-btn {
+    background: var(--primary);
+    color: #07111e;
+    border-color: var(--primary);
+}
+
+body.dark-mode .login-btn:hover {
+    background: #06c6c4;
+    color: #07111e;
+}
+
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+
 body.dark-mode .hero {
     background: #07111e;
 }
@@ -53,24 +86,67 @@ body.dark-mode .hero-text::after {
     background: #07111e;
 }
 
+
+/* Hero heading */
+
 body.dark-mode .hero h1 {
-    color: #07111e;
+    color: #f8fafc;
 }
+
+
+/* Eyebrow / small heading */
 
 body.dark-mode .eyebrow {
-    color: #07111e;
+    color: var(--primary);
 }
+
+
+/* Hero description */
 
 body.dark-mode .hero-description {
-    color: #0f172a;
+    color: #cbd5e1;
 }
+
+
+/* =====================================================
+   HERO PRIMARY BUTTON
+   ===================================================== */
+
+body.dark-mode .primary-btn {
+    background: var(--primary);
+    color: #07111e;
+    border-color: var(--primary);
+}
+
+body.dark-mode .primary-btn:hover {
+    background: #06c6c4;
+    color: #07111e;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO SECONDARY BUTTON
+   ===================================================== */
 
 body.dark-mode .secondary-btn {
-    border-color: #07111e;
-    color: #07111e;
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
-/* Highlights Section Dark Mode */
+body.dark-mode .secondary-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #07111e;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   HIGHLIGHTS SECTION
+   ===================================================== */
+
 body.dark-mode .highlights {
     background: #091524;
 }
@@ -101,20 +177,36 @@ body.dark-mode .past-event {
     color: var(--primary);
 }
 
-/* Events Page Dark Mode */
-body.dark-mode .events-hero-text h1,
-body.dark-mode .events-eyebrow,
-body.dark-mode .events-hero-text p {
-    color: #07111e;
+
+/* =====================================================
+   EVENTS PAGE - HERO
+   ===================================================== */
+
+body.dark-mode .events-hero-text h1 {
+    color: #f8fafc;
 }
 
 body.dark-mode .events-eyebrow {
-    background: rgba(7, 17, 30, 0.12);
+    color: var(--primary);
+    background: rgba(8, 217, 214, 0.12);
+}
+
+body.dark-mode .events-hero-text p {
+    color: #cbd5e1;
 }
 
 body.dark-mode .events-hero::after {
-    background: linear-gradient(to bottom, transparent, var(--background));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--background)
+    );
 }
+
+
+/* =====================================================
+   EVENT SEARCH / FILTER
+   ===================================================== */
 
 body.dark-mode .event-controls {
     background: #0f1d2e;
@@ -156,10 +248,22 @@ body.dark-mode .category-filter:hover {
 }
 
 body.dark-mode .category-filter.active {
-    background: linear-gradient(135deg, var(--primary) 0%, #06c6c4 100%);
+    background: linear-gradient(
+        135deg,
+        var(--primary) 0%,
+        #06c6c4 100%
+    );
+
     color: #07111e;
-    box-shadow: 0 4px 16px rgba(8, 217, 214, 0.25);
+
+    box-shadow:
+        0 4px 16px rgba(8, 217, 214, 0.25);
 }
+
+
+/* =====================================================
+   EVENT CARDS
+   ===================================================== */
 
 body.dark-mode .event-row {
     background: #0f1d2e;
@@ -169,28 +273,45 @@ body.dark-mode .event-row {
 
 body.dark-mode .event-row:hover {
     border-color: rgba(8, 217, 214, 0.35);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
 body.dark-mode .event-row:hover .event-main-info h2 {
     color: var(--primary);
 }
 
-body.dark-mode .event-row:hover .event-description .event-details > div {
+body.dark-mode
+.event-row:hover
+.event-description
+.event-details > div {
     background: rgba(8, 217, 214, 0.06);
 }
+
+
+/* Event title */
 
 body.dark-mode .event-main-info h2 {
     color: #f8fafc;
 }
 
+
+/* Date / location */
+
 body.dark-mode .event-basic-info span {
     color: #94a3b8;
 }
 
+
+/* Description */
+
 body.dark-mode .event-description p {
     color: #94a3b8;
 }
+
+
+/* Metadata */
 
 body.dark-mode .event-description .event-details span {
     color: #64748b;
@@ -200,13 +321,20 @@ body.dark-mode .event-details b {
     color: #f8fafc;
 }
 
-body.dark-mode .event-description .event-details > div {
+body.dark-mode
+.event-description
+.event-details > div {
     border-color: #24364e;
 }
 
 body.dark-mode .event-description {
     border-left-color: #24364e;
 }
+
+
+/* =====================================================
+   VIEW DETAILS BUTTON
+   ===================================================== */
 
 body.dark-mode .details-toggle-btn {
     background: rgba(8, 217, 214, 0.08);
@@ -220,22 +348,46 @@ body.dark-mode .details-toggle-btn:hover {
     color: #ffffff;
 }
 
+
+/* =====================================================
+   REGISTER BUTTON - EVENTS PAGE
+   ===================================================== */
+
 body.dark-mode .direct-register-btn {
+    background: var(--primary);
+    border-color: var(--primary);
     color: #07111e;
 }
 
 body.dark-mode .direct-register-btn:hover {
-    color: #ffffff;
+    background: #06c6c4;
+    border-color: #06c6c4;
+    color: #07111e;
 }
 
+
+/* =====================================================
+   EVENT EXTRA DETAILS
+   ===================================================== */
+
 body.dark-mode .event-extra-details {
-    background: linear-gradient(135deg, #0a1422 0%, #0d1a2a 100%);
+    background: linear-gradient(
+        135deg,
+        #0a1422 0%,
+        #0d1a2a 100%
+    );
+
     border-left-color: var(--primary);
 }
 
 body.dark-mode .extra-desc {
     color: #94a3b8 !important;
 }
+
+
+/* =====================================================
+   NO EVENTS
+   ===================================================== */
 
 body.dark-mode .no-events-state {
     background: #0f1d2e;
@@ -246,15 +398,25 @@ body.dark-mode .no-events-state h3 {
     color: #f8fafc;
 }
 
-/* Registration Page Dark Mode */
+
+/* =====================================================
+   REGISTRATION PAGE
+   ===================================================== */
+
 body.dark-mode .registration-page {
     background: #07111e;
 }
 
-body.dark-mode .intro-eyebrow,
-body.dark-mode .intro-content h1,
+body.dark-mode .intro-eyebrow {
+    color: var(--primary);
+}
+
+body.dark-mode .intro-content h1 {
+    color: #f8fafc;
+}
+
 body.dark-mode .intro-description {
-    color: #07111e;
+    color: #cbd5e1;
 }
 
 body.dark-mode .stat-card {
@@ -279,6 +441,11 @@ body.dark-mode .form-group label {
     color: #f8fafc;
 }
 
+
+/* =====================================================
+   REGISTRATION INPUTS
+   ===================================================== */
+
 body.dark-mode .input-wrapper,
 body.dark-mode .form-group select,
 body.dark-mode .social-register button {
@@ -291,6 +458,39 @@ body.dark-mode .input-wrapper input {
     color: #e2e8f0;
 }
 
+body.dark-mode .input-wrapper input::placeholder {
+    color: #64748b;
+}
+
+body.dark-mode .form-group select:focus,
+body.dark-mode .input-wrapper:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(8, 217, 214, 0.12);
+}
+
+
+/* =====================================================
+   REGISTRATION BUTTON
+   ===================================================== */
+
+body.dark-mode .register-submit,
+body.dark-mode .submit-btn {
+    background: var(--primary);
+    color: #07111e;
+    border-color: var(--primary);
+}
+
+body.dark-mode .register-submit:hover,
+body.dark-mode .submit-btn:hover {
+    background: #06c6c4;
+    color: #07111e;
+}
+
+
+/* =====================================================
+   WHY JOIN
+   ===================================================== */
+
 body.dark-mode .why-join {
     background: #091524;
 }
@@ -299,6 +499,11 @@ body.dark-mode .why-heading h2,
 body.dark-mode .benefit h3 {
     color: #f8fafc;
 }
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 body.dark-mode footer {
     background: #0b1726;
@@ -309,4 +514,56 @@ body.dark-mode .footer-container p,
 body.dark-mode .footer-links a,
 body.dark-mode .social-links a {
     color: #94a3b8;
+}
+
+body.dark-mode .footer-links a:hover,
+body.dark-mode .social-links a:hover {
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   GENERAL BUTTON SAFETY
+   ===================================================== */
+
+/*
+   Prevent buttons from accidentally becoming white
+   in dark mode.
+*/
+
+body.dark-mode button {
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =====================================================
+   MOBILE DARK MODE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    body.dark-mode .nav-links {
+        background: #0b1726;
+        border-color: #1e2d42;
+    }
+
+    body.dark-mode .event-row {
+        background: #0f1d2e;
+    }
+
+    body.dark-mode .event-description {
+        border-left: none;
+        border-top-color: #24364e;
+    }
+
+    body.dark-mode .primary-btn,
+    body.dark-mode .secondary-btn,
+    body.dark-mode .direct-register-btn {
+        color: #07111e;
+    }
+
 }
