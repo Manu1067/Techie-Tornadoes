@@ -61,10 +61,10 @@ function initializeMobileMenu() {
         <span class="bar"></span>
     `;
 
-    // Insert toggle button before login-btn or right container
-    const loginBtn = navContainer.querySelector(".login-btn") || navContainer.querySelector(".nav-right-actions");
-    if (loginBtn) {
-        navContainer.insertBefore(toggleBtn, loginBtn);
+    // Insert toggle button into nav-right-actions (right of login-btn)
+    const navRightActions = navContainer.querySelector(".nav-right-actions");
+    if (navRightActions) {
+        navRightActions.appendChild(toggleBtn);
     } else {
         navContainer.appendChild(toggleBtn);
     }
