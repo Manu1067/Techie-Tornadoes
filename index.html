@@ -13,6 +13,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -38,7 +39,7 @@
                 <button type="button" class="dark-mode-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="theme-icon">🌙</span>
                 </button>
-                <a href="login.html" class="login-btn">
+                <a href="login.html" class="login-btn shimmer-btn">
                     <span>👤</span>
                     Login / Sign Up
                 </a>
@@ -49,8 +50,12 @@
     <!-- ================= HERO ================= -->
     <main>
         <section class="hero">
+            <div class="hero-ambient-wrap" aria-hidden="true">
+                <div class="ambient-orb ambient-orb-1"></div>
+                <div class="ambient-orb ambient-orb-2"></div>
+            </div>
             <div class="hero-content">
-                <div class="hero-text">
+                <div class="hero-text anim-fade-up">
                     <p class="eyebrow">TECH EVENTS PLATFORM</p>
                     <h1>Discover. <span class="turquoise">Build.</span> Compete.</h1>
                     <p class="hero-description">
@@ -58,7 +63,7 @@
                         Learn, innovate and compete with the best.
                     </p>
                     <div class="hero-buttons">
-                        <a href="events.html" class="primary-btn">
+                        <a href="events.html" class="primary-btn shimmer-btn">
                             Explore Events <span>→</span>
                         </a>
                         <a href="#how-events-work" class="secondary-btn">
@@ -67,11 +72,27 @@
                     </div>
                 </div>
 
-                <div class="hero-image">
+                <div class="hero-image anim-zoom-in">
                     <img src="images/herosection.png" alt="Students collaborating on tech project" onerror="this.onerror=null; this.src='images/event.png';">
                 </div>
             </div>
         </section>
+
+        <!-- ================= LIVE TECH MARQUEE ================= -->
+        <div class="tech-marquee-bar" aria-label="Live event announcements">
+            <div class="tech-marquee-track">
+                <div class="marquee-item">🚀 <span class="highlight">CodeSprint 2026</span> Registration Live</div>
+                <div class="marquee-item">🏆 <span class="highlight">₹1,50,000+</span> Total Prize Pool</div>
+                <div class="marquee-item">🤖 <span class="highlight">RoboWars Arena</span> Battling April 2026</div>
+                <div class="marquee-item">⚡ <span class="highlight">Instant Digital ID</span> On Every Registration</div>
+                <div class="marquee-item">🌐 <span class="highlight">5,000+</span> Techies Competing</div>
+                <div class="marquee-item">🚀 <span class="highlight">CodeSprint 2026</span> Registration Live</div>
+                <div class="marquee-item">🏆 <span class="highlight">₹1,50,000+</span> Total Prize Pool</div>
+                <div class="marquee-item">🤖 <span class="highlight">RoboWars Arena</span> Battling April 2026</div>
+                <div class="marquee-item">⚡ <span class="highlight">Instant Digital ID</span> On Every Registration</div>
+                <div class="marquee-item">🌐 <span class="highlight">5,000+</span> Techies Competing</div>
+            </div>
+        </div>
 
         <!-- ================= EVENT HIGHLIGHTS ================= -->
         <section id="highlights" class="highlights">
@@ -334,6 +355,7 @@
     <!-- Scripts -->
     <script src="js/storage.js"></script>
     <script src="js/dark-mode.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
 
 </body>

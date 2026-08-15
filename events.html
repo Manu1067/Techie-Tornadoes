@@ -15,6 +15,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -45,7 +46,7 @@
                 <button type="button" class="dark-mode-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="theme-icon">🌙</span>
                 </button>
-                <a href="login.html" class="login-btn">
+                <a href="login.html" class="login-btn shimmer-btn">
                     <span>👤</span>
                     Login / Sign Up
                 </a>
@@ -57,17 +58,21 @@
          HERO SECTION (Matches Signature Home Page Hero Style)
          ===================================================== -->
     <section class="events-hero">
+        <div class="hero-ambient-wrap" aria-hidden="true">
+            <div class="ambient-orb ambient-orb-1"></div>
+            <div class="ambient-orb ambient-orb-2"></div>
+        </div>
         <div class="events-hero-content">
             
             <!-- Hero Text Block with Signature Turquoise Gradient & Diagonal Clip -->
-            <div class="events-hero-text">
+            <div class="events-hero-text anim-fade-up">
                 <p class="events-eyebrow">ALL TECHNICAL EVENTS 2026</p>
                 <h1>Explore. <span class="turquoise">Compete.</span> Conquer.</h1>
                 <p class="events-hero-description">
                     Browse through exciting national-level hackathons, combat robotics tournaments, cybersecurity CTFs, and AI challenges. Filter by domain or date to find your perfect challenge.
                 </p>
                 <div class="events-hero-buttons">
-                    <a href="#eventControls" class="events-primary-btn">
+                    <a href="#eventControls" class="events-primary-btn shimmer-btn">
                         Browse Events <span>↓</span>
                     </a>
                     <a href="registration.html" class="events-secondary-btn">
@@ -77,7 +82,7 @@
             </div>
 
             <!-- Hero Image Frame (Fills right side smoothly) -->
-            <div class="events-hero-image">
+            <div class="events-hero-image anim-zoom-in">
                 <img src="images/event.png" alt="Students attending Techie-Tornadoes technical events" onerror="this.onerror=null; this.src='images/herosection.png';">
             </div>
 
@@ -249,6 +254,7 @@
     <script src="js/dark-mode.js"></script>
     <script src="js/events.js"></script>
     <script src="js/search-filter.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
 
 </body>

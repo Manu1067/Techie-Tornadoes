@@ -101,6 +101,13 @@
     .registration-form-section {
         padding: 35px 25px;
     }
+
+    /* Contact Page Tablet */
+    .contact-layout {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        max-width: 100% !important;
+    }
 }
 
 /* =====================================================
@@ -378,12 +385,55 @@
         gap: 20px;
     }
 
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
+    /* Contact Page Mobile Stack */
+    .contact-page {
+        padding: 35px 16px 50px !important;
+    }
+
+    .contact-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .contact-details-card,
+    .contact-form-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 26px 20px !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+
+    .contact-form-card form {
+        width: 100% !important;
+    }
+
+    .contact-form-card .form-group {
+        width: 100% !important;
+        margin-bottom: 16px !important;
+    }
+
+    .contact-form-card .input-wrapper,
+    .contact-form-card input,
+    .contact-form-card textarea {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-form-card .register-button {
+        width: 100% !important;
+        min-height: 48px !important;
+        justify-content: center !important;
+    }
+
+    .faq-section {
+        margin-top: 40px !important;
+        width: 100% !important;
+        padding: 0 !important;
     }
 }
 
@@ -451,6 +501,29 @@
     .steps-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+
+    /* Contact Page Small Mobile */
+    .contact-page {
+        padding: 24px 12px 40px !important;
+    }
+
+    .contact-details-card,
+    .contact-form-card {
+        padding: 20px 14px !important;
+    }
+
+    .contact-details-card h2,
+    .contact-form-card h2 {
+        font-size: 20px !important;
+    }
+
+    .contact-info-item {
+        gap: 10px !important;
+    }
+
+    .contact-info-item span:first-child {
+        font-size: 18px !important;
     }
 }
 

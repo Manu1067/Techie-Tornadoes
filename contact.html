@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/registration.css">
     <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -34,7 +35,7 @@
                 <button type="button" class="dark-mode-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="theme-icon">🌙</span>
                 </button>
-                <a href="login.html" class="login-btn">
+                <a href="login.html" class="login-btn shimmer-btn">
                     <span>👤</span>
                     Login / Sign Up
                 </a>
@@ -44,7 +45,10 @@
 
     <main>
         <section class="page-hero">
-            <div class="page-hero-content scroll-animate">
+            <div class="hero-ambient-wrap" aria-hidden="true">
+                <div class="ambient-orb ambient-orb-1"></div>
+            </div>
+            <div class="page-hero-content anim-fade-up">
                 <p class="page-eyebrow">GET IN TOUCH</p>
                 <h1>Contact <span>Us</span></h1>
                 <p>Have a question about events, registration, or partnerships? We'd love to hear from you.</p>
@@ -53,7 +57,7 @@
 
         <section class="contact-page">
             <div class="contact-layout">
-                <div class="contact-details-card scroll-animate">
+                <div class="contact-details-card tilt-card anim-fade-up">
                     <h2>Reach Out</h2>
                     <p>Our team typically responds within 24–48 hours on business days.</p>
 
@@ -103,7 +107,7 @@
                     </div>
                 </div>
 
-                <div class="contact-form-card scroll-animate">
+                <div class="contact-form-card tilt-card anim-fade-up">
                     <h2>Send a Message</h2>
                     <p>Fill in the form below and we'll get back to you shortly.</p>
 
@@ -131,7 +135,7 @@
 
                         <div id="contactFormMessage" class="form-message"></div>
 
-                        <button type="submit" class="register-button">
+                        <button type="submit" class="register-button shimmer-btn">
                             Send Message <span>→</span>
                         </button>
                     </form>
@@ -216,6 +220,7 @@
     <script src="js/storage.js"></script>
     <script src="js/dark-mode.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

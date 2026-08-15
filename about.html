@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/registration.css">
     <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -34,7 +35,7 @@
                 <button type="button" class="dark-mode-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="theme-icon">🌙</span>
                 </button>
-                <a href="login.html" class="login-btn">
+                <a href="login.html" class="login-btn shimmer-btn">
                     <span>👤</span>
                     Login / Sign Up
                 </a>
@@ -44,14 +45,17 @@
 
     <main>
         <section class="page-hero">
-            <div class="page-hero-content scroll-animate">
+            <div class="hero-ambient-wrap" aria-hidden="true">
+                <div class="ambient-orb ambient-orb-1"></div>
+            </div>
+            <div class="page-hero-content anim-fade-up">
                 <p class="page-eyebrow">OUR STORY</p>
                 <h1>About <span>Techie-Tornadoes</span></h1>
                 <p>Empowering the next generation of innovators through world-class technical events.</p>
             </div>
         </section>
 
-        <section class="about-mission scroll-animate">
+        <section class="about-mission anim-fade-up">
             <h2>Our Mission</h2>
             <p>Techie-Tornadoes was born from a simple belief: every student deserves access to high-quality technical events that challenge their skills, expand their network, and accelerate their career. What started as a small campus hackathon has grown into one of India's most vibrant student tech communities.</p>
             <p>We curate coding competitions, robotics battles, cybersecurity challenges, innovation showcases, and expert-led workshops — all designed to bridge the gap between classroom learning and real-world problem solving. Whether you're a first-year student writing your first line of code or a seasoned builder ready to compete, Techie-Tornadoes is your launchpad.</p>
@@ -59,27 +63,27 @@
         </section>
 
         <section class="about-stats-band">
-            <div class="about-stats-inner scroll-animate">
+            <div class="about-stats-inner anim-fade-up">
                 <h2>By the Numbers</h2>
                 <div class="intro-stats">
-                    <div class="stat-card">
+                    <div class="stat-card tilt-card">
                         <div class="stat-icon">👥</div>
                         <div>
-                            <strong>5000+</strong>
+                            <strong class="counter-number">5000+</strong>
                             <span>Active Members</span>
                         </div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card tilt-card">
                         <div class="stat-icon">📅</div>
                         <div>
-                            <strong>50+</strong>
+                            <strong class="counter-number">50+</strong>
                             <span>Events Every Year</span>
                         </div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card tilt-card">
                         <div class="stat-icon">🏆</div>
                         <div>
-                            <strong>₹5L+</strong>
+                            <strong class="counter-number">₹5L+</strong>
                             <span>Prize Pool</span>
                         </div>
                     </div>
@@ -121,6 +125,7 @@
 
     <script src="js/storage.js"></script>
     <script src="js/dark-mode.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

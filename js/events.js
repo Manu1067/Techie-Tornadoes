@@ -440,10 +440,10 @@ function createEventRowMarkup(event) {
     `).join("");
 
     return `
-        <article class="event-row" data-event-id="${event.id}" data-category="${event.category}" data-name="${event.name.toLowerCase()}">
+        <article class="event-row anim-fade-up" data-event-id="${event.id}" data-category="${event.category}" data-name="${event.name.toLowerCase()}">
             
             <!-- MAIN VISIBLE CARD -->
-            <div class="event-card-main">
+            <div class="event-card-main tilt-card">
                 
                 <!-- POSTER IMAGE (100% Full Uncropped Poster) -->
                 <div class="event-image-col">
@@ -509,7 +509,7 @@ function createEventRowMarkup(event) {
                             <span class="btn-text">View Details</span>
                             <span class="arrow-icon">↓</span>
                         </button>
-                        <a href="registration.html?event=${encodeURIComponent(event.name)}" class="direct-register-btn" title="Register for ${event.name}">
+                        <a href="registration.html?event=${encodeURIComponent(event.name)}" class="direct-register-btn shimmer-btn" title="Register for ${event.name}">
                             Register Now <span class="arrow-right">→</span>
                         </a>
                     </div>
@@ -656,6 +656,11 @@ function renderEvents(eventsList = eventsData, hasActiveFilters = false) {
             }
         });
     });
+
+    // Trigger animations engine for new cards
+    if (window.TechieAnimations && typeof window.TechieAnimations.refresh === "function") {
+        window.TechieAnimations.refresh();
+    }
 }
 
 // Initial render if container exists on DOM load
