@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initializeSearchAndFilters() {
-    const searchInput = document.querySelector(".search-box input");
-    const searchBtn = document.querySelector(".search-button");
-    const categorySelects = document.querySelectorAll(".filter-select");
-    const categorySelect = categorySelects[0] || null; // Category select
-    const dateSelect = categorySelects[1] || null;     // Date select
+    const searchInput = document.getElementById("eventSearch") || document.querySelector(".search-box input");
+    const searchBtn = document.getElementById("searchButton") || document.querySelector(".search-button");
+    const clearBtn = document.getElementById("clearSearchBtn");
+    const categorySelect = document.getElementById("categoryFilter");
+    const dateSelect = document.getElementById("dateFilter");
     const chipButtons = document.querySelectorAll(".category-filter");
 
     let currentSearchQuery = "";
@@ -58,6 +58,11 @@ function initializeSearchAndFilters() {
         if (window.TechFestEvents.renderEvents) {
             window.TechFestEvents.renderEvents(filtered);
         }
+
+        // Toggle clear button
+        if (clearBtn) {
+            clearBtn.hidden = !currentSearchQuery;
+        }
     }
 
     // --- Search Input Event (Real-time + Enter key) ---
@@ -73,6 +78,17 @@ function initializeSearchAndFilters() {
                 currentSearchQuery = searchInput.value;
                 applyFilters();
             }
+        });
+    }
+
+    if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+            if (searchInput) {
+                searchInput.value = "";
+                currentSearchQuery = "";
+                searchInput.focus();
+            }
+            applyFilters();
         });
     }
 
