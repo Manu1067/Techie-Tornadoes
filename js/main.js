@@ -270,3 +270,41 @@ function updateCurrentYear() {
         el.textContent = currentYear;
     });
 }
+
+// =====================================================
+// 9. NON-BLOCKING TOAST NOTIFICATIONS
+// =====================================================
+function initializeToast() {
+    if (document.getElementById("techieToastContainer")) return;
+    const container = document.createElement("div");
+    container.id = "techieToastContainer";
+    container.className = "techie-toast-container";
+    document.body.appendChild(container);
+}
+
+window.showTechieToast = function (message, duration = 3000) {
+    let container = document.getElementById("techieToastContainer");
+    if (!container) {
+        initializeToast();
+        container = document.getElementById("techieToastContainer");
+    }
+
+    const toast = document.createElement("div");
+    toast.className = "techie-toast";
+    toast.innerHTML = `
+        <span class="toast-icon">ℹ️</span>
+        <span class="toast-msg">${message}</span>
+    `;
+
+    container.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        toast.classList.add("toast-show");
+    });
+
+    setTimeout(() => {
+        toast.classList.remove("toast-show");
+        toast.classList.add("toast-hide");
+        setTimeout(() => toast.remove(), 300);
+    }, duration);
+};
